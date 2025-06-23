@@ -1,5 +1,0 @@
-// An audio macro with a leading space:
- audio::example-audio.ogg[]
-
-// A video macro with a leading space:
- video::example-video.mp4[]

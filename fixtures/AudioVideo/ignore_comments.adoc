@@ -1,5 +1,0 @@
-// Comment lines:
-//audio::example-audio.ogg[]
-// audio::example-audio.ogg[]
-//video::example-video.mp4[]
-// video::example-video.mp4[]

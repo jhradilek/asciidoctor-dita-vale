@@ -1,5 +1,0 @@
-// An escaped audio macro:
-\audio::example-audio.ogg[]
-
-// An escaped video macro:
-\video::example-video.mp4[]

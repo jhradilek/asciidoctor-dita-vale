@@ -1,5 +1,0 @@
-// An audio macro with trailing characters:
-audio::example-audio.ogg[] additional content
-
-// A video macro with trailing characters:
-video::example-video.mp4[] additional content

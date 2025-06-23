@@ -72,7 +72,6 @@ The following rules have their severity set to `warning`. The AsciiDoc markup re
 | Vale Rule | Explanation |
 | --- | --- |
 | AdmonitionTitle | In DITA 1.3, the `<note>` element cannot have a title. Do not assign block titles to [admonitions](https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/). |
-| AudioVideo | The conversion tooling does not implement [audio and video](https://docs.asciidoctor.org/asciidoc/latest/macros/audio-and-video/) macros. |
 | AuthorLine | AsciiDoc interprets the first line that directly follows the document title as an author line. Add an empty line after the document title. |
 | BlockTitle | In DITA 1.3, only the `<example>`, `<fig>`, and `<table>` elements can have a title. Do not assign [block titles](https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/) to other blocks such as paragraphs, lists, or code blocks. |
 | ContentType | Without a clear content type definition, the Vale style cannot reliably report problems related to procedure modules such as `TaskSection` or `TaskExample`. Add the correct `:_mod-docs-content-type:` definition at the top of the file. |
