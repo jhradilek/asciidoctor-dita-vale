@@ -1,0 +1,8 @@
+// Ignore output redirections that look similar to entity references:
+
+[source,bash]
+----
+if sample-command >/dev/null 2>&1; then
+  echo y
+fi
+----
