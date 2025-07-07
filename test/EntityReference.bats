@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore output redirections" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_redirections.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore supported character entity references" {
   run run_vale "$BATS_TEST_FILENAME" ignore_supported_entities.adoc
   [ "$status" -eq 0 ]
