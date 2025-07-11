@@ -1,0 +1,12 @@
+// An invalid callout in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
++
+----
+A code block. <1>
+----
+
+<1> An invalid line.

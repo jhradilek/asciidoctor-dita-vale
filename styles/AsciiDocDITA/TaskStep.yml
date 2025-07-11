@@ -76,6 +76,7 @@ script: |
           in_other_block = delimiter
         } else if in_other_block == delimiter {
           in_other_block = false
+          in_continue = false
         }
         continue
       }
