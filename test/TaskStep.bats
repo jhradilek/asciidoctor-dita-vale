@@ -30,6 +30,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore valid callouts" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_valid_callout.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report content other than steps in procedures" {
   run run_vale "$BATS_TEST_FILENAME" report_non_steps.adoc
   [ "$status" -eq 0 ]
@@ -43,4 +49,11 @@ load test_helper
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_after_code.adoc:12:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA tasks." ]
+}
+
+@test "Report invalid callouts" {
+  run run_vale "$BATS_TEST_FILENAME" report_invalid_callout.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_invalid_callout.adoc:12:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA tasks." ]
 }
