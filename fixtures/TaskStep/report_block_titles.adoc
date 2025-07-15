@@ -1,0 +1,13 @@
+// Valid block titles in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
++
+.A supported block title
+|===
+|A table cell
+|===
+
+An invalid line.
