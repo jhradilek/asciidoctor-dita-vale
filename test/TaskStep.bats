@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore block titles" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_block_titles.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore valid lines with all content variations" {
   run run_vale "$BATS_TEST_FILENAME" ignore_valid_lines.adoc
   [ "$status" -eq 0 ]
@@ -62,4 +68,11 @@ load test_helper
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_invalid_callout.adoc:12:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA tasks." ]
+}
+
+@test "Report content after unsupported block titles" {
+  run run_vale "$BATS_TEST_FILENAME" report_block_titles.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_block_titles.adoc:13:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA tasks." ]
 }

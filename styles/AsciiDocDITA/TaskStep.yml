@@ -8,7 +8,7 @@ script: |
   text              := import("text")
   matches           := []
 
-  r_any_title       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})[^ \\t.].*$")
+  r_any_title       := text.re_compile("^\\.{1,2}[^ \\t.].*$")
   r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
@@ -21,6 +21,7 @@ script: |
   r_other_block     := text.re_compile("^(?:\\.{4,}|-{4,}|={4,}|-{2})[ \\t]*$")
   r_procedure       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Procedure[ \\t]*$")
   r_step            := text.re_compile("^[ \\t]*[\\*-.]+[ \\t]+\\S.*$")
+  r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?|Additional resources)[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
@@ -66,9 +67,8 @@ script: |
 
     if ! in_procedure { continue }
 
-    if r_any_title.match(line) {
-      break
-    }
+    if r_supported_title.match(line) { break }
+    if r_any_title.match(line) { continue }
 
     if in_step {
       if r_other_block.match(line) {
