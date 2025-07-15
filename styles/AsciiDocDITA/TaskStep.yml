@@ -99,8 +99,13 @@ script: |
       in_continue = false
     }
 
-    if r_step.match(line) || r_dlist.match(line) {
+    if r_step.match(line) {
       in_list = true
+      in_step = true
+      continue
+    }
+
+    if in_list && r_dlist.match(line) {
       in_step = true
       continue
     }
