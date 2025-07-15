@@ -1,0 +1,12 @@
+// A valid nested blocks in a procedure:
+
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
+
+term:: Explanation
+
+term::
+Explanation
