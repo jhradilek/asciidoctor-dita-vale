@@ -26,22 +26,30 @@
 
 ## Usage
 
-*   To validate a single AsciiDoc file, run the following command:
+*   Validate a single AsciiDoc file:
 
     ```console
     $ vale source_file.adoc
     ```
-*   To validate all AsciiDoc files in the current directory and all of its subdirectories, run the following command:
+*   Validate all AsciiDoc files in the current directory and all of its subdirectories:
 
     ```console
     $ vale .
     ```
-*   To list suggestions that are normally diabled by setting the `MinAlertLevel` option to `warning` in the configuration, run the following command:
+*   Validate all AsciiDoc files in the current directory only:
+
+    ```console
+    $ vale *.adoc
+    ```
+
+    This may be required if your project uses symbolic links to other directories.
+
+*   List suggestions that are normally disabled by setting the `MinAlertLevel` option to `warning` in the configuration:
 
     ```console
     $ vale --filter '.Level=="suggestion"' .
     ```
-*   To generate a report with each message on an individual line, run the following command:
+*   Generate a report with each message on an individual line:
 
     ```console
     $ vale --output line .
@@ -57,7 +65,7 @@
 
 The following rules have their severity set to `error`. The AsciiDoc markup reported by these rules causes the conversion tooling to produce invalid DITA output.
 
-| Vale Rule | Explanation |
+| Vale rule | Explanation |
 | --- | --- |
 | EntityReference | DITA 1.3 supports five character entity references defined in the XML standard: `&amp;`, `&lt;`, `&gt;`, `&apos;`, and `&quot;`. Replace any other character entity references with an appropriate [built-in AsciiDoc attribute](https://docs.asciidoctor.org/asciidoc/latest/attributes/character-replacement-ref/). |
 | ExampleBlock | DITA 1.3 allows the `<example>` element to appear only within the main body of the topic. Do not use [example blocks](https://docs.asciidoctor.org/asciidoc/latest/blocks/example-blocks/) in sections, within other blocks, or as part of lists. |
@@ -69,7 +77,7 @@ The following rules have their severity set to `error`. The AsciiDoc markup repo
 
 The following rules have their severity set to `warning`. The AsciiDoc markup reported by these rules causes the conversion tooling to issue a warning, but does not produce invalid DITA output.
 
-| Vale Rule | Explanation |
+| Vale rule | Explanation |
 | --- | --- |
 | AdmonitionTitle | In DITA 1.3, the `<note>` element cannot have a title. Do not assign block titles to [admonitions](https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/). |
 | AuthorLine | AsciiDoc interprets the first line that directly follows the document title as an author line. Add an empty line after the document title. |
@@ -93,7 +101,7 @@ The following rules have their severity set to `warning`. The AsciiDoc markup re
 
 The following rules have their severity set to `suggestion`. These are convenience rules and do not report problems with the AsciiDoc markup.
 
-| Vale Rule | Explanation |
+| Vale rule | Explanation |
 | --- | --- |
 | AttributeReference | Lists all [attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/reference-attributes/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
 | ConditionalCode | Lists all `ifdef`, `ifndef`, and `ifeval` [conditional statements](https://docs.asciidoctor.org/asciidoc/latest/directives/conditionals/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
