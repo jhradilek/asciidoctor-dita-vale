@@ -1,0 +1,11 @@
+# Report links that contain an attribute reference.
+---
+extends: existence
+message: "Attribute references inside of links cannot be converted to DITA."
+level: warning
+scope: raw
+nonword: true
+tokens:
+  - '(?:|link:|<)(?:|\+\+)(?:https?|file|ftp|irc)://[^ \t\[\]]*\{(?:[0-9A-Za-z][0-9A-Za-z-]*|set:.+?|counter2?:.+?)\}[^ \t\[\]]*(?:|\+\+)(?:|\[.*?\])>?'
+  - '(?:link:|<)(?:|\+\+)\{(?:[0-9A-Za-z][0-9A-Za-z-]*|set:.+?|counter2?:.+?)\}[^ \t\[\]]*(?:|\+\+)(?:|\[.*?\])>?'
+  - '(?:link:|<)(?:|\+\+)#[^ \t\[\]]*\{(?:[0-9A-Za-z][0-9A-Za-z-]*|set:.+?|counter2?:.+?)\}[^ \t\[\]]*(?:|\+\+)(?:|\[.*?\])>?'
