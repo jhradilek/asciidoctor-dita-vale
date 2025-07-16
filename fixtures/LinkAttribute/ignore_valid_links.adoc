@@ -1,0 +1,8 @@
+// Valid links without attribute references:
+link:https://example.com[link text]
+
+link:++https://example.com++[link text]
+
+<https://example.com>
+
+https://example.com
