@@ -12,8 +12,20 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore attribute lists" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_attribute_lists.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore conditional directives" {
   run run_vale "$BATS_TEST_FILENAME" ignore_conditionals.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Ignore include directives in assemblies" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_assembly_includes.adoc
   [ "$status" -eq 0 ]
   [ "${lines[0]}" = "" ]
 }

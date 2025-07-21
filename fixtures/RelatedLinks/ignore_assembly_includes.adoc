@@ -1,0 +1,8 @@
+// Include directives in assembly modules:
+:_mod-docs-content-type: ASSEMBLY
+
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::path/to/module.adoc[leveloffset=+1]
