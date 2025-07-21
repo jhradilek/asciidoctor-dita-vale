@@ -15,7 +15,7 @@ script: |
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_conditional     := text.re_compile("^(?:ifn?def|ifeval|endif)::\\S*\\[.*\\][ \\t]*$")
-  r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t](?i:procedure)")
+  r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:procedure)")
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_example_block   := text.re_compile("^\\[example\\][ \\t]*$")
   r_example_delim   := text.re_compile("^={4,}[ \\t]*$")
