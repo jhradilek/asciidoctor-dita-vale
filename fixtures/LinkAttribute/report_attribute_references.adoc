@@ -1,7 +1,7 @@
 // Attribute references inside of links:
-link:{DocURL}[link text]
+link:{DOCUMENT_URL}[link text]
 
-link:++{DocURL}++[link text]
+link:++{DOCUMENT_URL}++[link text]
 
 link:https://example.com/docs/version-{ProductVersion}/title[link text]
 
