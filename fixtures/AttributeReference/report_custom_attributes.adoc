@@ -3,3 +3,5 @@
 :DocumentTitle: {product-name} {product-version}
 
 {DocumentTitle} describes {product-name}.
+
+link:{BASE_URL}[]

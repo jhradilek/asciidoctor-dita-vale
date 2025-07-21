@@ -6,7 +6,7 @@ level: suggestion
 scope: raw
 nonword: true
 tokens:
-  - '\{([0-9A-Za-z][0-9A-Za-z-]*|set:.+?|counter2?:.+?)\}'
+  - '\{([0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\}'
 exceptions:
   - blank
   - empty

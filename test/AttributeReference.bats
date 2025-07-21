@@ -9,11 +9,12 @@ load test_helper
 @test "Report custom attribute references" {
   run run_vale "$BATS_TEST_FILENAME" report_custom_attributes.adoc
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 4 ]
+  [ "${#lines[@]}" -eq 5 ]
   [ "${lines[0]}" = "report_custom_attributes.adoc:3:17:AsciiDocDITA.AttributeReference:{product-name}" ]
   [ "${lines[1]}" = "report_custom_attributes.adoc:3:32:AsciiDocDITA.AttributeReference:{product-version}" ]
   [ "${lines[2]}" = "report_custom_attributes.adoc:5:1:AsciiDocDITA.AttributeReference:{DocumentTitle}" ]
   [ "${lines[3]}" = "report_custom_attributes.adoc:5:27:AsciiDocDITA.AttributeReference:{product-name}" ]
+  [ "${lines[4]}" = "report_custom_attributes.adoc:7:6:AsciiDocDITA.AttributeReference:{BASE_URL}" ]
 }
 
 @test "Report counter attributes" {
