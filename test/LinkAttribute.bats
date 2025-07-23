@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore replaceable content" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_replaceable_values.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report links with attribute references" {
   run run_vale "$BATS_TEST_FILENAME" report_attribute_references.adoc
   [ "$status" -eq 0 ]
