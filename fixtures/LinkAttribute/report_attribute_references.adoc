@@ -10,3 +10,5 @@ link:{BaseURL}/docs/version-{ProductVersion}/title[link text]
 https://example.com/docs/version-{ProductVersion}/title
 
 <ftp://{SERVER_NAME}/downloads/>
+
+link:{DocumentURL}
