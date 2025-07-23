@@ -1,0 +1,6 @@
+// Replaceable values that use angle brackets:
+
+[source,terminal]
+----
+$ command --option=<{ProductName}_id>
+----

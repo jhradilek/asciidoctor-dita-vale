@@ -7,6 +7,6 @@ link:https://example.com/docs/version-{ProductVersion}/title[link text]
 
 link:{BaseURL}/docs/version-{ProductVersion}/title[link text]
 
-<{BaseURL}/docs/version-{ProductVersion}/title>
-
 https://example.com/docs/version-{ProductVersion}/title
+
+<ftp://{SERVER_NAME}/downloads/>
