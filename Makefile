@@ -38,7 +38,7 @@ ZIPFILE  := $(NAME).zip
 # Command aliases:
 BATS      = \bats
 YAMLLINT  = \yamllint -s -f auto
-CHANGELOG = \git log --no-merges --pretty='{%D}* %s' | \sed -e 's/^{[^}]*tag: \([^},]\+\)[^}]*}/\n\#\# \1\n\n/;s/^{[^}]*}//;1i \# Changelog\n'
+CHANGELOG = \git log --pretty='{%D}* %s' | \sed -e 's/^{[^}]*tag: \([^},]\+\)[^}]*}/\n\#\# \1\n\n/;s/^{[^}]*}//;1i \# Changelog\n' | \sed -e '/^\* Merge pull request/d'
 ZIP       = \zip -r
 
 # Generate a changelog from revision history:
