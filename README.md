@@ -31,32 +31,35 @@
     ```console
     $ vale source_file.adoc
     ```
+*   Validate all AsciiDoc files in the current directory:
+
+    ```console
+    $ vale *.adoc
+    ```
+*   Generate a report with each message on an individual line:
+
+    ```console
+    $ vale --output line *.adoc
+    ```
+
+    To import this report to a spreadsheet, make sure suggestions are disabled and select a colon (`:`) as a separator.
+
 *   Validate all AsciiDoc files in the current directory and all of its subdirectories:
 
     ```console
     $ vale .
     ```
-*   Validate all AsciiDoc files in the current directory only:
+
+    Note that on larger documentation projects, running `vale` like this may be slow or even fail with an error if your project uses symbolic links to other directories. To work around this problem, run `vale` in multiple parallel processes simultaneously, for example: 
 
     ```console
-    $ vale *.adoc
+    $ find . -type f -name '*.adoc' | xargs -n 1 -P 14 vale --output line
     ```
-
-    This may be required if your project uses symbolic links to other directories.
-
 *   List suggestions that are normally disabled by setting the `MinAlertLevel` option to `warning` in the configuration:
 
     ```console
     $ vale --filter '.Level=="suggestion"' .
     ```
-*   Generate a report with each message on an individual line:
-
-    ```console
-    $ vale --output line .
-    ```
-
-    To import this report to a spreadsheet, make sure suggestions are disabled and select a colon (`:`) as a separator.
-
 *   Read [the official documentation](https://vale.sh/docs/install) to learn how to use Vale in an editor such as VSCode, Neovim, or Emacs, or run it as a GitHub action.
 
 ## Available rules
