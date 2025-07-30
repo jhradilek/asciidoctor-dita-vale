@@ -47,3 +47,13 @@ load test_helper
   [ "${lines[2]}" = "report_multiple_references.adoc:3:94:AsciiDocDITA.EntityReference:HTML character entity references are not supported in DITA." ]
   [ "${lines[3]}" = "report_multiple_references.adoc:3:125:AsciiDocDITA.EntityReference:HTML character entity references are not supported in DITA." ]
 }
+
+@test "Report code blocks with replacements enabled" {
+  run run_vale "$BATS_TEST_FILENAME" report_code_blocks.adoc
+  [ "$status" -ne 0 ]
+  [ "${#lines[@]}" -eq 4 ]
+  [ "${lines[0]}" = "report_code_blocks.adoc:6:22:AsciiDocDITA.EntityReference:HTML character entity references are not supported in DITA." ]
+  [ "${lines[1]}" = "report_code_blocks.adoc:12:22:AsciiDocDITA.EntityReference:HTML character entity references are not supported in DITA." ]
+  [ "${lines[2]}" = "report_code_blocks.adoc:18:22:AsciiDocDITA.EntityReference:HTML character entity references are not supported in DITA." ]
+  [ "${lines[3]}" = "report_code_blocks.adoc:24:22:AsciiDocDITA.EntityReference:HTML character entity references are not supported in DITA." ]
+}
