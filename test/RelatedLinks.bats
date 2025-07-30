@@ -12,7 +12,7 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
-@test "Ignore attribute lists" {
+@test "Ignore supported attribute lists" {
   run run_vale "$BATS_TEST_FILENAME" ignore_attribute_lists.adoc
   [ "$status" -eq 0 ]
   [ "${lines[0]}" = "" ]
@@ -43,6 +43,16 @@ load test_helper
   [ "${lines[0]}" = "report_non_links.adoc:4:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
   [ "${lines[1]}" = "report_non_links.adoc:6:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
   [ "${lines[2]}" = "report_non_links.adoc:7:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
+}
+
+@test "Report unsupported attribute lists" {
+  run run_vale "$BATS_TEST_FILENAME" report_attribute_lists.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 4 ]
+  [ "${lines[0]}" = "report_attribute_lists.adoc:6:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
+  [ "${lines[1]}" = "report_attribute_lists.adoc:7:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
+  [ "${lines[2]}" = "report_attribute_lists.adoc:11:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
+  [ "${lines[3]}" = "report_attribute_lists.adoc:12:1:AsciiDocDITA.RelatedLinks:Content other than links cannot be mapped to DITA related-links." ]
 }
 
 @test "Recognize additional resources title variations" {

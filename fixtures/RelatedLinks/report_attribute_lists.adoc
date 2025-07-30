@@ -1,0 +1,12 @@
+// Invalid attribute lists after Additional resources:
+
+[role="_additional-resources"]
+.Additional resources
+
+[role="_abstract"]
+An invalid line.
+
+* link:https://example.com[link text]
+
+[NOTE]
+An invalid admonition.
