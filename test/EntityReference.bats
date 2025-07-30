@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore code blocks with replacements disabled" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report unsupported character entity references" {
   run run_vale "$BATS_TEST_FILENAME" report_entity_references.adoc
   [ "$status" -ne 0 ]
