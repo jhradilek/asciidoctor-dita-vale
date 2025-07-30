@@ -1,10 +1,15 @@
-// Attribute lists after Additional resources:
+// Valid attribute lists after Additional resources:
 [role="_additional-resources"]
 .Additional resources
 
 * link:https://example.com[link text]
 
 [role="_additional-resources"]
+.Additional resources
+
+* link:https://example.com[link text]
+
+[role='_additional-resources']
 .Additional resources
 
 * link:https://example.com[link text]
