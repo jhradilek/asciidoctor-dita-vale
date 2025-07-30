@@ -21,6 +21,7 @@ script: |
   r_inline_link     := text.re_compile("^[ \\t]*[\\*-][ \\t]+(?:|link:|<)(?:|\\+\\+)(?:https?|file|ftp|irc)://[^ \\t\\[\\]]+(?:|\\+\\+)(?:|\\[.*?\\])>?[ \\t]*$")
   r_inline_xref     := text.re_compile("^[ \\t]*[\\*-][ \\t]+<<[A-Za-z0-9/.:{].*?>>[ \\t]*$")
   r_link_macro      := text.re_compile("^[ \\t]*[\\*-][ \\t]+(?:link|mailto):(?:|[^: \\t\\[][^: \\t\\[]*)\\[.*?\\][ \\t]*$")
+  r_role_attribute  := text.re_compile("^\\[role=['\\x22]_additional-resources['\\x22]\\][ \\t]*$")
   r_xref_macro      := text.re_compile("^[ \\t]*[\\*-][ \\t]+xref:[A-Za-z0-9/.:{].*?\\[.*?\\][ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
@@ -54,8 +55,11 @@ script: |
 
     if r_empty_line.match(line) { continue }
     if r_attribute.match(line) { continue }
-    if r_attribute_list.match(line) { continue }
     if r_conditional.match(line) { continue }
+
+    if r_attribute_list.match(line) && r_role_attribute.match(line) {
+      continue
+    }
 
     if r_include.match(line) && is_assembly {
       continue
