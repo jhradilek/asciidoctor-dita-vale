@@ -1,62 +1,62 @@
 // HTML character entity references in code blocks:
 
 ....
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ....
 
 [literal]
 ....
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ....
 
 [literal,subs="+quotes"]
 ....
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ....
 
 [subs="+quotes"]
 ....
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ....
 
 ----
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ----
 
 [source]
 ----
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ----
 
 [source,asciidoc]
 ----
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ----
 
 [source,subs="+quotes"]
 ----
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ----
 
 [subs="normal,-replacements"]
 ....
-===============================================
+-----------------------------------------------
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ....
