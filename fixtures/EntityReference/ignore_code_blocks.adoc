@@ -53,3 +53,10 @@ Middle dot:          &middot;
 Horizontal ellipsis: &hellip;
 Middle dot:          &middot;
 ----
+
+[subs="normal,-replacements"]
+....
+===============================================
+Horizontal ellipsis: &hellip;
+Middle dot:          &middot;
+....

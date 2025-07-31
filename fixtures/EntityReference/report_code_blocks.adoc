@@ -1,5 +1,11 @@
 // HTML character entity references in code blocks:
 
+[subs='replacements']
+....
+===============================================
+Horizontal ellipsis: &hellip;
+....
+
 [subs='+replacements']
 ....
 ===============================================
@@ -19,6 +25,24 @@ Horizontal ellipsis: &hellip;
 ....
 
 [subs="+replacements ,"]
+....
+===============================================
+Horizontal ellipsis: &hellip;
+....
+
+[subs="normal"]
+....
+===============================================
+Horizontal ellipsis: &hellip;
+....
+
+[subs="verbatim,normal,+quotes"]
+....
+===============================================
+Horizontal ellipsis: &hellip;
+....
+
+[subs="verbatim,+normal,+quotes"]
 ....
 ===============================================
 Horizontal ellipsis: &hellip;

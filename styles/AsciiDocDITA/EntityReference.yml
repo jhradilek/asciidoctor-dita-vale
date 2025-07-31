@@ -16,7 +16,8 @@ script: |
   r_empty_line       := text.re_compile("^[ \\t]*$")
   r_entity_reference := text.re_compile("&[a-zA-Z][a-zA-Z0-9]*;")
   r_list_continue    := text.re_compile("^\\+[ \\t]*$")
-  r_sub_replacements := text.re_compile("subs=['\\x22][^'\\x22]*\\+replacements(?:[ \\t]*,[^'\\x22]*|)['\\x22]")
+  r_sub_disabled     := text.re_compile("-replacements")
+  r_sub_replacements := text.re_compile("subs=['\\x22](?:[^'\\x22]*,[ \\t]*|)\\+?(?:replacements|normal)(?:[ \\t]*,[^'\\x22]*|)['\\x22]")
   r_supported_entity := text.re_compile("&(?:amp|lt|gt|apos|quot);")
 
   document           := text.split(text.trim_suffix(scope, "\n"), "\n")
@@ -60,7 +61,7 @@ script: |
     if r_list_continue.match(line) { continue }
 
     if r_attribute_list.match(line) {
-      if r_sub_replacements.match(line) {
+      if r_sub_replacements.match(line) && ! r_sub_disabled.match(line) {
         replacements = true
       }
       continue
