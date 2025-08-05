@@ -9,7 +9,26 @@
 
 * link:https://example.com[link text]
 
+[._additional-resources]
+.Additional resources
+
+* link:https://example.com[link text]
+
+[id="subsection-id"]
+== A valid subsection
+
 [role='_additional-resources']
 .Additional resources
 
 * link:https://example.com[link text]
+
+[#subsection-id]
+== A valid subsection
+
+[role='_additional-resources']
+.Additional resources
+
+* link:https://example.com[link text]
+
+[[subsection-id]]
+== A valid subsection
