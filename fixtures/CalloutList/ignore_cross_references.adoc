@@ -1,0 +1,3 @@
+// Cross references that look similar to callouts:
+
+<<cross-reference-by-id>> followed by some text.
