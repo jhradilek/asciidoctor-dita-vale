@@ -1,0 +1,11 @@
+// Escaped links with attribute references:
+
+\https://example.com/docs/version-{ProductVersion}/title
+
+<\ftp://{SERVER_NAME}/downloads/>
+
+\link:{DOCUMENT_URL}[link text]
+
+\link:++{DOCUMENT_URL}++[link text]
+
+\link:{BaseURL}/docs/version-{ProductVersion}/title[link text]

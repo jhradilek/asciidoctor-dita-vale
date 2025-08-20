@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore escaped urls" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_escapes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore bash variables" {
   run run_vale "$BATS_TEST_FILENAME" ignore_bash_variables.adoc
   [ "$status" -eq 0 ]
