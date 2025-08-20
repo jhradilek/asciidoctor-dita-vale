@@ -20,6 +20,16 @@ A false paragraph.
 ----
 
 . A valid step.
++
+[table]
+.A supported table title
+|=====
+|Cell 2
+
+|Cell 1
+|=====
+
+. A valid step.
 
 .. A valid substep.
 
