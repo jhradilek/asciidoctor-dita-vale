@@ -21,12 +21,11 @@ A false paragraph.
 
 . A valid step.
 +
-[table]
 .A supported table title
 |=====
-|Cell 2
+|Row 1
 
-|Cell 1
+|Row 2
 |=====
 
 . A valid step.
