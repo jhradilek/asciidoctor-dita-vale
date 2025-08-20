@@ -18,7 +18,7 @@ script: |
   r_dlist           := text.re_compile("^[ \\t]*\\S.*?(?::{2,4}|;;)(?:|[ \\t]+.*)$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_list_continue   := text.re_compile("^\\+[ \\t]*$")
-  r_other_block     := text.re_compile("^(?:\\.{4,}|-{4,}|={4,}|-{2})[ \\t]*$")
+  r_other_block     := text.re_compile("^(?:\\.{4,}|-{4,}|={4,}|-{2}|\\|={3,})[ \\t]*$")
   r_procedure       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Procedure[ \\t]*$")
   r_step            := text.re_compile("^[ \\t]*[\\*-.]+[ \\t]+\\S.*$")
   r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?|Additional resources)[ \\t]*$")
