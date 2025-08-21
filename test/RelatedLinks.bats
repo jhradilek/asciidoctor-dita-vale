@@ -18,6 +18,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore supported attribute references" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_attribute_references.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore conditional directives" {
   run run_vale "$BATS_TEST_FILENAME" ignore_conditionals.adoc
   [ "$status" -eq 0 ]
