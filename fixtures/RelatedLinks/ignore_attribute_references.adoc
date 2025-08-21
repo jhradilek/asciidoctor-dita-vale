@@ -1,0 +1,4 @@
+// Valid attribute references:
+.Additional resources
+
+* {LinkAttribute}
