@@ -1,0 +1,12 @@
+// An invalid admonition in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
+
+.An invalid admonition
+[NOTE]
+====
+An invalid admonition.
+====

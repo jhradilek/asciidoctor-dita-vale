@@ -1,0 +1,11 @@
+// Valid example block in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
+
+.A valid example title
+====
+Valid text.
+====

@@ -8,6 +8,7 @@ script: |
   text              := import("text")
   matches           := []
 
+  r_admonition      := text.re_compile("^\\[(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION)\\][ \\t]*$")
   r_any_title       := text.re_compile("^\\.{1,2}[^ \\t.].*$")
   r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
@@ -17,6 +18,7 @@ script: |
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:procedure)")
   r_dlist           := text.re_compile("^[ \\t]*\\S.*?(?::{2,4}|;;)(?:|[ \\t]+.*)$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
+  r_example_delim   := text.re_compile("^={4,}[ \\t]*$")
   r_list_continue   := text.re_compile("^\\+[ \\t]*$")
   r_other_block     := text.re_compile("^(?:\\.{4,}|-{4,}|={4,}|-{2}|\\|={3,})[ \\t]*$")
   r_procedure       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Procedure[ \\t]*$")
@@ -56,9 +58,11 @@ script: |
       continue
     }
 
-    if r_attribute.match(line) { continue }
-    if r_attribute_list.match(line) { continue }
     if r_conditional.match(line) { continue }
+    if r_attribute.match(line) { continue }
+    if r_attribute_list.match(line) && ! r_admonition.match(line) {
+      continue
+    }
 
     if r_procedure.match(line) {
       in_procedure = true
@@ -111,6 +115,8 @@ script: |
     }
 
     if in_step { continue }
+
+    if r_example_delim.match(line) { break }
 
     matches = append(matches, {begin: start, end: start + end - 1})
 
