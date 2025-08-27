@@ -30,6 +30,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore valid example blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_example_block.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore valid lines with all content variations" {
   run run_vale "$BATS_TEST_FILENAME" ignore_valid_lines.adoc
   [ "$status" -eq 0 ]
@@ -75,4 +81,11 @@ load test_helper
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_block_titles.adoc:13:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA tasks." ]
+}
+
+@test "Report admonitions after steps" {
+  run run_vale "$BATS_TEST_FILENAME" report_admonitions.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_admonitions.adoc:9:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA tasks." ]
 }
