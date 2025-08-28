@@ -1,7 +1,0 @@
-// Cross reference variations:
-
-A paragraph with a <<cross-reference-by-id>> without text and another one <<with,additional text>>.
-
-A paragraph with a xref:cross-reference-by-id[] without text and another one xref:with[additional text].
-
-A paragraph with a <<cross-reference-by-id.adoc>> without text and another one <<with.adoc,additional text>>.
