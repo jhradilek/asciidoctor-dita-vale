@@ -6,7 +6,6 @@ level: warning
 scope: raw
 script: |
   text               := import("text")
-  fmt                := import("fmt")
   matches            := []
 
   r_code_block       := text.re_compile("^(?:\\.{4,}|-{4,})[ \\t]*$")
