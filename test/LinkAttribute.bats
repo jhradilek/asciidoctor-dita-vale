@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore code blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore replaceable content" {
   run run_vale "$BATS_TEST_FILENAME" ignore_replaceable_values.adoc
   [ "$status" -eq 0 ]
