@@ -1,0 +1,6 @@
+// Lines with similar synatx to block titles inside of code blocks:
+
+[source,terminal]
+----
+./run-command.sh .
+----

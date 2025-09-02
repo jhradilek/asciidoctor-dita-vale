@@ -6,6 +6,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore block titles inside of code blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore steps that have similar syntax to block titles" {
   run run_vale "$BATS_TEST_FILENAME" ignore_steps.adoc
   [ "$status" -eq 0 ]
