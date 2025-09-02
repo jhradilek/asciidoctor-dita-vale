@@ -23,6 +23,7 @@ script: |
   document           := text.split(text.trim_suffix(scope, "\n"), "\n")
 
   expect_admonition  := false
+  expect_example     := false
   in_comment_block   := false
   in_code_block      := false
   in_example_block   := false
@@ -86,6 +87,10 @@ script: |
           expect_admonition = false
           continue
         }
+        if expect_example {
+          expect_example = false
+          continue
+        }
 
         count++
 
@@ -105,10 +110,12 @@ script: |
         matches = append(matches, {begin: start, end: start + end - 1})
       }
 
+      expect_example = true
       continue
     }
 
     expect_admonition = false
+    expect_example = false
   }
 
   if ! is_procedure {
