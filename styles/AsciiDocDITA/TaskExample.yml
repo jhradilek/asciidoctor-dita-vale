@@ -72,7 +72,7 @@ script: |
       continue
     }
 
-    if expect_admonition {
+    if expect_admonition || expect_example {
       if r_block_title.match(line) || r_list_continue.match(line) {
         continue
       }
