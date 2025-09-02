@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore supported example blocks with redundant markup" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_duplicate_markup.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore example blocks in other content types" {
   run run_vale "$BATS_TEST_FILENAME" ignore_other_modules.adoc
   [ "$status" -eq 0 ]

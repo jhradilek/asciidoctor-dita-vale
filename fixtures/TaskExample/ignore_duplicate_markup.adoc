@@ -1,0 +1,8 @@
+// Example blocks that use duplicate syntax:
+:_mod-docs-content-type: PROCEDURE
+
+[example]
+.An example title
+====
+A supported example.
+====
