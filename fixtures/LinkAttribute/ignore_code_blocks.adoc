@@ -1,0 +1,11 @@
+// Attribute references inside of a link in code blocks:
+
+[source,terminal]
+----
+$ wget "https://{CLUSTER_URL}/policy.json"
+----
+
+[literal]
+....
+$ wget "https://{CLUSTER_URL}/policy.json"
+....
