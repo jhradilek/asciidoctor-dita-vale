@@ -6,3 +6,12 @@
 //****
 //A paragraph.
 //****
+
+////
+[sidebar]
+A paragraph.
+
+****
+A paragraph.
+****
+////

@@ -1,0 +1,7 @@
+// Lines with similar synatx to sidebar blocks inside of code blocks:
+
+[source,terminal]
+----
+A code block.
+*************
+----
