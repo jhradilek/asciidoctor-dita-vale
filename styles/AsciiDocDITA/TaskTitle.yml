@@ -11,6 +11,7 @@ script: |
   r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
   r_block_title     := text.re_compile("^\\.{1,2}[^ \\t.].*$")
+  r_code_block      := text.re_compile("^(?:\\.{4,}|-{4,})[ \\t]*$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_conditional     := text.re_compile("^(?:ifn?def|ifeval|endif)::\\S*\\[.*\\][ \\t]*$")
@@ -24,6 +25,7 @@ script: |
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
+  in_code_block     := false
   in_comment_block  := false
   is_procedure      := false
   is_list_continue  := false
@@ -46,6 +48,17 @@ script: |
     }
     if in_comment_block { continue }
     if r_comment_line.match(line) { continue }
+
+    if r_code_block.match(line) {
+      delimiter := text.trim_space(line)
+      if ! in_code_block {
+        in_code_block = delimiter
+      } else if in_code_block == delimiter {
+        in_code_block = false
+      }
+      continue
+    }
+    if in_code_block { continue }
 
     if r_content_type.match(line) {
       is_procedure = true

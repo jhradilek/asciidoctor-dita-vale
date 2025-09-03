@@ -1,0 +1,7 @@
+// Lines with similar synatx to block titles inside of code blocks:
+:_mod-docs-content-type: PROCEDURE
+
+[source,terminal]
+----
+./run-command.sh .
+----
