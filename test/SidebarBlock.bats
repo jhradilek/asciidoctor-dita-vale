@@ -1,7 +1,13 @@
 load test_helper
 
-@test "Ignore sidebars in single-line comments" {
+@test "Ignore sidebars inside of line and block comments" {
   run run_vale "$BATS_TEST_FILENAME" ignore_comments.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Ignore sidebars inside of code blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
   [ "$status" -eq 0 ]
   [ "${lines[0]}" = "" ]
 }
