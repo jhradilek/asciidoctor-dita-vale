@@ -1,0 +1,18 @@
+// Callout list variations:
+
+[source,ruby]
+----
+puts "Hello, World!" <1>
+----
+<1> Print "Hello, World!" to standard output.
+
+[source,xml]
+----
+<ph id="project-name">dita-topic</ph> <!--1-->
+----
+<1> A reusable project name definition.
+
+----
+==== <.>
+----
+<.> An example block delimiter.
