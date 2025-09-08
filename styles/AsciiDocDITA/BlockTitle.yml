@@ -3,6 +3,7 @@
 extends: script
 message: "Block titles can only be assigned to examples, figures, and tables in DITA."
 level: warning
+link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw
 script: |
   text              := import("text")
