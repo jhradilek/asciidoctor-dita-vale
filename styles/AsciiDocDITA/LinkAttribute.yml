@@ -9,10 +9,12 @@ script: |
   text               := import("text")
   matches            := []
 
+  r_attribute_ref    := text.re_compile("\\{(?:[0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\\}")
   r_code_block       := text.re_compile("^(?:\\.{4,}|-{4,})[ \\t]*$")
   r_comment_line     := text.re_compile("^(//|//[^/].*)$")
   r_comment_block    := text.re_compile("^/{4,}\\s*$")
   r_complete_link    := text.re_compile("(?:|link:)(?:|\\+\\+)(?:https?|file|ftp|irc)://[^\\s\\[\\]]*(\\{(?:[0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\\})[^\\s\\[\\]]*(?:|\\+\\+)(?:|\\[.*?\\])")
+  r_domain_markup    := text.re_compile("(?:https?|file|ftp|irc):///?[^/]*[_*`#~^][^/]*")
   r_incomplete_link  := text.re_compile("link:(?:|\\+\\+)\\{(?:[0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\\}[^\\s\\[\\]]*(?:|\\+\\+)(?:|\\[.*?\\])")
 
   document           := text.split(text.trim_suffix(scope, "\n"), "\n")
@@ -50,12 +52,15 @@ script: |
     if in_code_block { continue }
 
     for i, entry in r_complete_link.find(line, -1) {
-      if (text.has_prefix(text.substr(line, entry[1].begin -1, entry[1].begin), '$')) {
+      if (text.has_prefix(text.substr(line, entry[1].begin - 1, entry[1].begin), '$')) {
         continue
       }
 
       link := entry[0]
       if (link.begin > 0) && text.has_prefix(text.substr(line, link.begin - 1, link.begin), '\\') {
+        continue
+      }
+      if r_domain_markup.match(r_attribute_ref.replace(link.text, "")) {
         continue
       }
 
