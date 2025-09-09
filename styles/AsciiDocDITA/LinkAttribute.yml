@@ -14,7 +14,7 @@ script: |
   r_comment_line     := text.re_compile("^(//|//[^/].*)$")
   r_comment_block    := text.re_compile("^/{4,}\\s*$")
   r_complete_link    := text.re_compile("(?:|link:)(?:|\\+\\+)(?:https?|file|ftp|irc)://[^\\s\\[\\]]*(\\{(?:[0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\\})[^\\s\\[\\]]*(?:|\\+\\+)(?:|\\[.*?\\])")
-  r_domain_markup    := text.re_compile("(?:https?|file|ftp|irc):///?[^/]*[_*`#~^][^/]*")
+  r_domain_markup    := text.re_compile("(?:https?|file|ftp|irc):///?[_*`#~^][^_*`#~^]*?[_*`#~^]")
   r_incomplete_link  := text.re_compile("link:(?:|\\+\\+)\\{(?:[0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\\}[^\\s\\[\\]]*(?:|\\+\\+)(?:|\\[.*?\\])")
 
   document           := text.split(text.trim_suffix(scope, "\n"), "\n")
