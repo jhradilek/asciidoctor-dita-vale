@@ -12,3 +12,15 @@ https://example.com/docs/version-{ProductVersion}/title
 <ftp://{SERVER_NAME}/downloads/>
 
 link:{DocumentURL}
+
+https://example.com:8443/path/_{ProjectName}_Path
+
+https://example.com:8443/path/*{ProjectName}*Path
+
+https://example.com:8443/path/`{ProjectName}`Path
+
+https://example.com:8443/path/#{ProjectName}#Path
+
+https://example.com:8443/path/~{ProjectName}~Path
+
+https://example.com:8443/path/^{ProjectName}^Path

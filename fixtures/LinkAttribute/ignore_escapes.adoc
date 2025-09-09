@@ -9,3 +9,17 @@
 \link:++{DOCUMENT_URL}++[link text]
 
 \link:{BaseURL}/docs/version-{ProductVersion}/title[link text]
+
+https://_{ExampleURL}_:8443/path/_{ProjectName}_Path
+
+https://*{ExampleURL}*:8443/path/_{ProjectName}_Path
+
+https://`{ExampleURL}`:8443/path/_{ProjectName}_Path
+
+https://#{ExampleURL}#:8443/path/_{ProjectName}_Path
+
+https://~{ExampleURL}~:8443/path/_{ProjectName}_Path
+
+https://^{ExampleURL}^:8443/path/_{ProjectName}_Path
+
+https://_{ExampleSubdomain}_.example.com:8443/path/_{ProjectName}_Path
