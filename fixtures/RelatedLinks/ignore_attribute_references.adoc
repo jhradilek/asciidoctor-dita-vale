@@ -2,3 +2,5 @@
 .Additional resources
 
 * {LinkAttribute}
+* {LinkAttribute}[{LinkTextAttribute}]
+* {LinkAttribute}/path#anchor[Link text]
