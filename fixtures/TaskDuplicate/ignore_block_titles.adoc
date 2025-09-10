@@ -1,0 +1,44 @@
+// Block titles assigned to supported blocks:
+:_mod-docs-content-type: PROCEDURE
+
+.Result
+image::example.png[]
+
+.Result
+[#example-image]
+image::example.png[Example image,200,200]
+
+.Result
+|===
+|A table cell
+|===
+
+.Result
+[cols="1"]
+|===
+|A table cell
+|===
+
+.Result
+[example]
+An example.
+
+.Result
+====
+An example.
+====
+
+.Result
+NOTE: An admonition.
+
+.Result
+[NOTE]
+====
+An admonition.
+====
+
+[NOTE]
+.Result
+====
+An admonition.
+====

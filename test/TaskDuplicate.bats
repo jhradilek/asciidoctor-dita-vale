@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore block titles assigned to examples, figures, and tables" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_block_titles.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore block titles in other content types" {
   run run_vale "$BATS_TEST_FILENAME" ignore_other_modules.adoc
   [ "$status" -eq 0 ]
