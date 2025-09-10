@@ -1,0 +1,14 @@
+// Lines with similar syntax to block titles inside of code blocks:
+:_mod-docs-content-type: PROCEDURE
+
+[source,asciidoc]
+----
+.Result
+A paragraph.
+----
+
+[source,asciidoc]
+----
+.Result
+A paragraph.
+----
