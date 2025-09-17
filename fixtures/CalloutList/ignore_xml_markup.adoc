@@ -1,0 +1,6 @@
+// XML markup that looks similar to callouts:
+
+[source,xml]
+----
+<p> A paragraph. </p>
+----
