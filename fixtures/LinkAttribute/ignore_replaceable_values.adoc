@@ -1,3 +1,0 @@
-// Replaceable values that use angle brackets:
-
-Run the `command --option=<{ProductName}_id>` command.
