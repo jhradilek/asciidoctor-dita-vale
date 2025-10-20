@@ -45,8 +45,9 @@ load test_helper
 @test "Report unsupported block titles" {
   run run_vale "$BATS_TEST_FILENAME" report_block_titles.adoc
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 3 ]
+  [ "${#lines[@]}" -eq 4 ]
   [ "${lines[0]}" = "report_block_titles.adoc:2:1:AsciiDocDITA.BlockTitle:Block titles can only be assigned to examples, figures, and tables in DITA." ]
   [ "${lines[1]}" = "report_block_titles.adoc:5:1:AsciiDocDITA.BlockTitle:Block titles can only be assigned to examples, figures, and tables in DITA." ]
   [ "${lines[2]}" = "report_block_titles.adoc:8:1:AsciiDocDITA.BlockTitle:Block titles can only be assigned to examples, figures, and tables in DITA." ]
+  [ "${lines[3]}" = "report_block_titles.adoc:11:1:AsciiDocDITA.BlockTitle:Block titles can only be assigned to examples, figures, and tables in DITA." ]
 }
