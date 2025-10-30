@@ -7,4 +7,4 @@ level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw
 min: 1
-token: '(?:^|[\n\r])\[role=(["\x27]?)_abstract\1?\]'
+token: '(?:^|[\n\r])\[role=(["\x27]?)_abstract\1\]'
