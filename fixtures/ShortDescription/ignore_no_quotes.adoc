@@ -1,0 +1,5 @@
+// A topic with a valid abstract role definition:
+= Topic title
+
+[role=_abstract]
+A paragraph.
