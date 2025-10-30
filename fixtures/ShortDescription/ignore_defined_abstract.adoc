@@ -1,5 +1,0 @@
-// A topic with the [role="_abstract"] attribute list definition:
-= Topic title
-
-[role="_abstract"]
-A paragraph.

@@ -1,0 +1,8 @@
+// A topic with an invalid abstract role definition:
+= Topic title
+
+[role=“_abstract”]
+A paragraph.
+
+[role=‘_abstract’]
+A paragraph.
