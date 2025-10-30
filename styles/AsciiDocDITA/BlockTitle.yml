@@ -58,6 +58,7 @@ script: |
       } else if in_code_block == delimiter {
         in_code_block = false
       }
+      expect_block = false
       continue
     }
     if in_code_block { continue }

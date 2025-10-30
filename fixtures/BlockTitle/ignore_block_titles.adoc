@@ -6,6 +6,10 @@ image::example.png[]
 [#example-image]
 image::example.png[Example image,200,200]
 
+[#example-image]
+.A supported block title
+image::example.png[Example image,200,200]
+
 .A supported block title
 |===
 |A table cell
@@ -13,6 +17,12 @@ image::example.png[Example image,200,200]
 
 .A supported block title
 [cols="1"]
+|===
+|A table cell
+|===
+
+[cols="1"]
+.A supported block title
 |===
 |A table cell
 |===
@@ -25,3 +35,61 @@ An example.
 ====
 An example.
 ====
+
+.A supported block title
+[example]
+====
+An example.
+====
+
+[example]
+.A supported block title
+====
+An example.
+====
+
+.A supported block title
+----
+A listing block.
+----
+
+.A supported block title
+[listing]
+----
+A listing block.
+----
+
+[listing]
+.A supported block title
+----
+A listing block.
+----
+
+.A supported block title
+[source]
+----
+A source block.
+----
+
+[source]
+.A supported block title
+----
+A source block.
+----
+
+.A supported block title
+....
+A literal block.
+....
+
+.A supported block title
+[literal]
+....
+A literal block.
+....
+
+[literal]
+.A supported block title
+....
+A literal block.
+....
