@@ -6,6 +6,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore include directives" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_includes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore author lines inside of block comments" {
   run run_vale "$BATS_TEST_FILENAME" ignore_comments.adoc
   [ "$status" -eq 0 ]

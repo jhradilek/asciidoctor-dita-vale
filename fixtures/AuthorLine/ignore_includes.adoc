@@ -1,0 +1,6 @@
+// A document with an include directive after the title:
+= Topic title
+include::shared-attributes.adoc[]
+
+A paragraph.
+

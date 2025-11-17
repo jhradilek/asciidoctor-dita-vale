@@ -13,6 +13,7 @@ script: |
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_document_title  := text.re_compile("^=[ \\t]+\\S.*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
+  r_include         := text.re_compile("^include::")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
@@ -45,6 +46,8 @@ script: |
       need_empty_line = true
     } else if need_empty_line {
       if r_attribute.match(line) {
+        continue
+      } else if r_include.match(line) {
         continue
       } else if text.trim_space(line) != "" {
         matches = append(matches, {begin: start, end: start + end - 1})
