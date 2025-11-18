@@ -1,0 +1,5 @@
+// A document with an included attribute definition file:
+= Topic title
+include::_attributes/common-attributes.adoc[]
+
+A paragraph.
