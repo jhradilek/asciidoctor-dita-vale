@@ -14,6 +14,12 @@ script: |
   r_document_title  := text.re_compile("^=[ \\t]+\\S.*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
 
+  // Teams are inconsistent in how they name attribute definition files.
+  // As it is impossible to reliably identify which files only define attributes
+  // without reading their contents, the following is a workaround specifically
+  // for openshift-docs:
+  r_attribute_file  := text.re_compile("^include::_attributes/(?:attributes-[^/]+|[^/]*-?attributes)\\.adoc\\[.*\\][ \\t]*$")
+
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
   in_comment_block  := false
@@ -44,7 +50,7 @@ script: |
       }
       need_empty_line = true
     } else if need_empty_line {
-      if r_attribute.match(line) {
+      if r_attribute.match(line) || r_attribute_file.match(line) {
         continue
       } else if text.trim_space(line) != "" {
         matches = append(matches, {begin: start, end: start + end - 1})
