@@ -1,0 +1,4 @@
+// A module with a valid document title:
+= A valid document title
+
+A paragraph.

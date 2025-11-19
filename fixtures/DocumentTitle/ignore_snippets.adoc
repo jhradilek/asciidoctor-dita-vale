@@ -1,0 +1,6 @@
+// A snippet file without a valid document title:
+:_mod-docs-content-type: SNIPPET
+
+== A level 1 section heading
+
+A paragraph.
