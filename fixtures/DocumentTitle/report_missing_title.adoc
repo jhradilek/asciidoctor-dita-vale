@@ -1,0 +1,4 @@
+// A module without a valid document title:
+== A level 1 section heading
+
+A paragraph.

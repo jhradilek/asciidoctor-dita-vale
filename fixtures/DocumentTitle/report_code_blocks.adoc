@@ -1,0 +1,7 @@
+// A module with a title in a code block:
+[source,asciidoc]
+----
+= A valid document title
+
+A paragrpaph.
+----
