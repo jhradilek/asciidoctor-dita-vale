@@ -1,0 +1,6 @@
+// A module with a valid document id:
+
+[id="document-id"]
+= A document title
+
+A paragraph.

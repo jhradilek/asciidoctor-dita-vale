@@ -1,0 +1,12 @@
+// A module with various directives between the title and the id:
+
+[id="document-id"]
+
+:custom-attribute: value
+
+ifdef::custom-attribute[]
+[discrete]
+= A document title
+endif::custom-attribute[]
+
+A paragraph.

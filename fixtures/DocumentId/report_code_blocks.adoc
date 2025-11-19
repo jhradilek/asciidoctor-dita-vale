@@ -1,0 +1,10 @@
+// A module with an id in a code block:
+
+[source,asciidoc]
+----
+[id="document-id"]
+----
+
+= A document title
+
+A paragraph.
