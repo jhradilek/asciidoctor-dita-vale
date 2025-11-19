@@ -1,0 +1,8 @@
+// A module with another block between the title and the id:
+
+[id="document-id"]
+An invalid block.
+
+= A document title
+
+A paragraph.

@@ -1,4 +1,5 @@
 // A module with a title in a block comment:
+//= A valid document title
 ////
 = A valid document title
 

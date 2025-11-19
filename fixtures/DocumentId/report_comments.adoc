@@ -1,0 +1,10 @@
+// A module with an id in a comment:
+
+// [id="document-id"]
+////
+[id="document-id"]
+////
+
+= A document title
+
+A paragraph.

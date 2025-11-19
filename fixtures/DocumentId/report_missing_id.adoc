@@ -1,0 +1,5 @@
+// A module without a document id:
+
+= A document title
+
+A paragraph.
