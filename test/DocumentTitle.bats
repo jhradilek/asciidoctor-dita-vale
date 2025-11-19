@@ -19,7 +19,7 @@ load test_helper
   [ "${lines[0]}" = "report_code_blocks.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (a level 0 heading) is missing." ]
 }
 
-@test "Report document titles that only appear in block comments" {
+@test "Report document titles that only appear in comments" {
   run run_vale "$BATS_TEST_FILENAME" report_comments.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
