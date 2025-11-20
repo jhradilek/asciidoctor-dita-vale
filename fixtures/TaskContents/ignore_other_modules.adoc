@@ -1,0 +1,4 @@
+// A concept module without a procedure block title:
+:_mod-docs-content-type: CONCEPT
+
+A paragraph.

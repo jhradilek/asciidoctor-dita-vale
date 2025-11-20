@@ -1,0 +1,14 @@
+// A procedure module with a procedure block title in a comment:
+:_mod-docs-content-type: PROCEDURE
+
+A paragraph.
+
+//.Procedure
+//
+//. A step.
+
+////
+.Procedure
+
+. A step.
+////
