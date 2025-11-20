@@ -1,0 +1,4 @@
+// A procedure module without a procedure block title:
+:_mod-docs-content-type: PROCEDURE
+
+A paragraph.

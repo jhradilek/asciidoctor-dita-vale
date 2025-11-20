@@ -1,0 +1,8 @@
+// A procedure module with a valid procedure block title:
+:_mod-docs-content-type: PROCEDURE
+
+A paragraph.
+
+.Procedure
+
+. A step.
