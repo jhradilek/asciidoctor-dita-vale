@@ -1,0 +1,12 @@
+// An assembly file with an invalid section after additional resources:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+.Additional resources
+
+* link:https://example.com[link text]
+
+.Next steps
+
+A paragraph.

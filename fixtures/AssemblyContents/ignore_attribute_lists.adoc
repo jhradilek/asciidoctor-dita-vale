@@ -1,0 +1,37 @@
+// An assembly with multiple additional resources:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+[role='_additional-resources']
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::second_file.adoc[leveloffset=+1]
+
+[._additional-resources]
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::third_file.adoc[leveloffset=+1]
+
+[id="first-id"]
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::fourth_file.adoc[leveloffset=+1]
+
+[#second-id]
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::fifth_file.adoc[leveloffset=+1]
+
+[[third-id]]
+.Additional resources
+
+* link:https://example.com[link text]

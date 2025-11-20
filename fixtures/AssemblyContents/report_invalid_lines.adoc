@@ -1,0 +1,8 @@
+// An assembly with unsupported content in between includes:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+An unsupported paragraph.
+
+include::second_file.adoc[leveloffset=+1]

@@ -1,0 +1,11 @@
+// An assembly with conditional statements in between includes:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+ifeval::["{version-number}" == "1.0.0"]
+include::second_file.adoc[leveloffset=+1]
+endif::[]
+
+ifdef::parent-context[:context: {parent-context}]
+ifndef::parent-context[:!context:]

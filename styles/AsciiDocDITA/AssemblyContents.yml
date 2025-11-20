@@ -18,6 +18,7 @@ script: |
   r_conditional     := text.re_compile("^(?:ifn?def|ifeval|endif)::\\S*\\[.*\\][ \\t]*$")
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:assembly)[ \\t]*$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
+  r_id_attribute    := text.re_compile("^\\[(?:id=['\\x22]|#|\\[)[A-Za-z_:{}][A-Za-z0-9_.:{}-]*(?:['\\x22],?[^\\]]*|,[^\\]]*\\]?|\\]?)\\][ \\t]*$")
   r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[.*\\][ \\t]*$")
 
   // Teams are inconsistent in how they name attribute definition files and
@@ -75,6 +76,7 @@ script: |
     if r_empty_line.match(line) { continue }
     if r_attribute.match(line) { continue }
     if r_conditional.match(line) { continue }
+    if r_id_attribute.match(line) { continue }
     if r_attribute_list.match(line) { continue }
 
     if ! in_add_resources || r_any_title.match(line) {
