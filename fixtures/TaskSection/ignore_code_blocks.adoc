@@ -1,0 +1,13 @@
+// Ignore section headers in code blocks:
+:_module-type: PROCEDURE
+
+= Topic title
+
+A paragraph.
+
+[source,asciidoc]
+----
+== First unsupported section
+
+A paragraph.
+----
