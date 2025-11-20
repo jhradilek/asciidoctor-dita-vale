@@ -10,7 +10,6 @@ script: |
   matches           := []
 
   r_add_resources   := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Additional resources[ \\t]*$")
-  r_any_title       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})[^ \\t.].*$")
   r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
   r_attribute_ref   := text.re_compile("^[ \\t]*[\\*-][ \\t]+\\{(?:[0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\\}(?:|[^\\[\\s]*\\[.*?\\])[ \\t]*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
@@ -26,11 +25,12 @@ script: |
   r_link_macro      := text.re_compile("^[ \\t]*[\\*-][ \\t]+(?:link|mailto):(?:|[^: \\t\\[][^: \\t\\[]*)\\[.*?\\][ \\t]*$")
   r_xref_macro      := text.re_compile("^[ \\t]*[\\*-][ \\t]+xref:[A-Za-z0-9/.:{].*?\\[.*?\\][ \\t]*$")
 
-  // Teams are inconsistent in how they name attribute definition files.
-  // As it is impossible to reliably identify which files only define attributes
-  // without reading their contents, the following is a workaround specifically
-  // for openshift-docs:
+  // Teams are inconsistent in how they name attribute definition files and
+  // snippet files. As it is impossible to reliably identify these files without
+  // reading their contents, the following is a workaround specifically for
+  // openshift-docs:
   r_attribute_file  := text.re_compile("^include::_attributes/(?:attributes-[^/]+|[^/]*-?attributes)\\.adoc\\[.*\\][ \\t]*$")
+  r_snippet_file    := text.re_compile("^include::snippets/[^/]+\\.adoc\\[.*\\][ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
@@ -74,8 +74,10 @@ script: |
       continue
     }
 
-    if r_include.match(line) && ! r_attribute_file.match(line) {
-      has_includes = true
+    if r_include.match(line) {
+      if ! r_attribute_file.match(line) && ! r_snippet_file.match(line) {
+        has_includes = true
+      }
       continue
     }
 
@@ -96,11 +98,6 @@ script: |
       break
     }
 
-    if r_any_title.match(line) {
-      in_add_resources = false
-      continue
-    }
-
     if r_link_macro.match(line) || r_inline_link.match(line) ||
        r_xref_macro.match(line) || r_inline_xref.match(line) ||
        r_attribute_ref.match(line) {
@@ -108,6 +105,7 @@ script: |
     }
 
     matches = append(matches, {begin: start, end: start + end - 1})
+    break
   }
 
   if ! is_assembly {
