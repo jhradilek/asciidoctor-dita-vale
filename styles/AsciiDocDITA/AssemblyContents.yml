@@ -11,7 +11,6 @@ script: |
 
   r_add_resources   := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Additional resources[ \\t]*$")
   r_any_title       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})[^ \\t.].*$")
-  r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
@@ -20,6 +19,7 @@ script: |
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_id_attribute    := text.re_compile("^\\[(?:id=['\\x22]|#|\\[)[A-Za-z_:{}][A-Za-z0-9_.:{}-]*(?:['\\x22],?[^\\]]*|,[^\\]]*\\]?|\\]?)\\][ \\t]*$")
   r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[.*\\][ \\t]*$")
+  r_role_attribute  := text.re_compile("^\\[(?:role=['\\x22]|\\.).*['\\x22]?\\][ \\t]*$")
 
   // Teams are inconsistent in how they name attribute definition files and
   // snippet files. As it is impossible to reliably identify these files without
@@ -77,7 +77,7 @@ script: |
     if r_attribute.match(line) { continue }
     if r_conditional.match(line) { continue }
     if r_id_attribute.match(line) { continue }
-    if r_attribute_list.match(line) { continue }
+    if r_role_attribute.match(line) { continue }
 
     if ! in_add_resources || r_any_title.match(line) {
       matches = append(matches, {begin: start, end: start + end - 1})

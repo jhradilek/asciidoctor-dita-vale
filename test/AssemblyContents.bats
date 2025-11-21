@@ -40,7 +40,7 @@ load test_helper
   run run_vale "$BATS_TEST_FILENAME" report_code_blocks.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_code_blocks.adoc:7:1:AsciiDocDITA.AssemblyContents:Content other than additional resources cannot follow include directives." ]
+  [ "${lines[0]}" = "report_code_blocks.adoc:6:1:AsciiDocDITA.AssemblyContents:Content other than additional resources cannot follow include directives." ]
 }
 
 @test "Report invalid lines between or after includes" {
@@ -48,6 +48,13 @@ load test_helper
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_invalid_lines.adoc:6:1:AsciiDocDITA.AssemblyContents:Content other than additional resources cannot follow include directives." ]
+}
+
+@test "Report unsupported attribute lists between or after includes" {
+  run run_vale "$BATS_TEST_FILENAME" report_attribute_lists.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_attribute_lists.adoc:6:1:AsciiDocDITA.AssemblyContents:Content other than additional resources cannot follow include directives." ]
 }
 
 @test "Report invalid sections after additional resources" {

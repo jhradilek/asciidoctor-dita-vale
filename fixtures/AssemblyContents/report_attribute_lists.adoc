@@ -1,0 +1,9 @@
+// An assembly with unsupported attribute list in between includes:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+[example]
+An unsupported paragraph.
+
+include::second_file.adoc[leveloffset=+1]
