@@ -1,0 +1,21 @@
+// A valid assembly file:
+:_mod-docs-content-type: ASSEMBLY
+
+[id="assembly-title"]
+= Assembly topic
+
+[role="_abstract"]
+A short description.
+
+Assembly introduction.
+
+include::first_file.adoc[leveloffset=+1]
+
+include::second_file.adoc[leveloffset=+1]
+
+include::third_file.adoc[leveloffset=+1]
+
+[role='_additional-resources']
+.Additional resources
+
+* link:https://example.com[link text]

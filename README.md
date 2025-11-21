@@ -80,6 +80,7 @@ The following rules have their severity set to `warning`. The AsciiDoc markup re
 | Vale rule | Explanation |
 | --- | --- |
 | AdmonitionTitle | In DITA 1.3, the `<note>` element cannot have a title. Do not assign block titles to [admonitions](https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/). |
+| AssemblyContents | In assemblies, [include directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include/) can be followed only by the *Additional resources* section. Do not place any other contents between or after include directives. |
 | AuthorLine | AsciiDoc interprets the first line that directly follows the document title as an author line. Add an empty line after the document title. |
 | BlockTitle | In DITA 1.3, only the `<example>`, `<fig>`, and `<table>` elements can have a title. Do not assign [block titles](https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/) to other blocks such as paragraphs, lists, or code blocks. |
 | CalloutList | DITA 1.3 does not support [callouts](https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/). Rewrite your content to avoid the need for callout numbers and replace the explanation with simple sentences, [an unordered list](https://docs.asciidoctor.org/asciidoc/latest/lists/unordered/), or [a description list](https://docs.asciidoctor.org/asciidoc/latest/lists/description/) as appropriate. |

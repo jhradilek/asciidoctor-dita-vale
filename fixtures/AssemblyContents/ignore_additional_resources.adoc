@@ -1,0 +1,20 @@
+// An assembly with multiple additional resources:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::second_file.adoc[leveloffset=+1]
+
+.Additional resources
+
+* link:https://example.com[link text]
+
+include::third_file.adoc[leveloffset=+1]
+
+== Additional resources
+
+* link:https://example.com[link text]

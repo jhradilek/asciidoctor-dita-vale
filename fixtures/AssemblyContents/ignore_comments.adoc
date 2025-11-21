@@ -1,0 +1,12 @@
+// An assembly with comments in between includes:
+:_mod-docs-content-type: ASSEMBLY
+
+include::first_file.adoc[leveloffset=+1]
+
+// A line comment.
+
+include::second_file.adoc[leveloffset=+1]
+
+////
+A block comment.
+////
