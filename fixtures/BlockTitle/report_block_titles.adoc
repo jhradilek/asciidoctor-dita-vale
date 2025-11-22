@@ -6,7 +6,11 @@ A paragraph.
 . A list.
 
 .An unsupported block title
-[source,ruby]
-----
-A code block.
-----
+* A list.
+
+.An unsupported block title
+term::
+Definition
+
+term::
+Definition
