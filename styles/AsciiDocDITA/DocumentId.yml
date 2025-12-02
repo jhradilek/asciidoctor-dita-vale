@@ -15,7 +15,7 @@ script: |
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_conditional     := text.re_compile("^(?:ifn?def|ifeval|endif)::\\S*\\[.*\\][ \\t]*$")
-  r_document_title  := text.re_compile("^=[ \\t]+[^ \\t].*$")
+  r_document_title  := text.re_compile("^(?:=[ \\t]+[^ \\t].*|ifn?def::\\S*\\[=[ \\t]+[^ \\t].*\\][ \\t]*)$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_id_attribute    := text.re_compile("^\\[(?:id=['\\x22]?|#|\\[)[A-Za-z_:{}][A-Za-z0-9_.:{}-]*(?:['\\x22]?,?[^\\]]*|,[^\\]]*\\]?|\\]?)\\][ \\t]*$")
 
@@ -61,8 +61,8 @@ script: |
 
     if r_attribute_list.match(line) { continue }
     if r_attribute.match(line) { continue }
-    if r_conditional.match(line) { continue }
     if r_empty_line.match(line) { continue }
+    if r_conditional.match(line) && ! r_document_title.match(line) { continue }
 
     if r_document_title.match(line) {
       if ! assigned_id {
