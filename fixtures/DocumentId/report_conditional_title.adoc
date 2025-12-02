@@ -1,0 +1,6 @@
+// A module without a document id:
+
+ifdef::custom-attribute[= A document title]
+ifndef::custom-attribute[= An alternative document title]
+
+A paragraph.

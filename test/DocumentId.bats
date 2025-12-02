@@ -63,3 +63,10 @@ load test_helper
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_missing_id.adoc:3:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
 }
+
+@test "Report missing document ids for conditional titles" {
+  run run_vale "$BATS_TEST_FILENAME" report_conditional_title.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_conditional_title.adoc:3:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
+}
