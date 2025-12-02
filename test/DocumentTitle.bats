@@ -6,6 +6,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files with titles in single-line conditions" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_conditional_title.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore missing document titles in snippet files" {
   run run_vale "$BATS_TEST_FILENAME" ignore_snippets.adoc
   [ "$status" -eq 0 ]

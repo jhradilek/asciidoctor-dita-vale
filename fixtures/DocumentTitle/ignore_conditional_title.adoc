@@ -1,0 +1,5 @@
+// A module with a document title in single-line conditions:
+ifdef::custom-attribute[= A document title]
+ifndef::custom-attribute[= An alternative document title]
+
+A paragraph.
