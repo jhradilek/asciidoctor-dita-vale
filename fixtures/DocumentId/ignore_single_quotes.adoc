@@ -1,0 +1,6 @@
+// A module with a document id in single quotes:
+
+[id='document-id']
+= A document title
+
+A paragraph.

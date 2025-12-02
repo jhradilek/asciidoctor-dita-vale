@@ -17,7 +17,7 @@ script: |
   r_conditional     := text.re_compile("^(?:ifn?def|ifeval|endif)::\\S*\\[.*\\][ \\t]*$")
   r_document_title  := text.re_compile("^=[ \\t]+[^ \\t].*$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
-  r_id_attribute    := text.re_compile("^\\[(?:id=['\\x22]|#|\\[)[A-Za-z_:{}][A-Za-z0-9_.:{}-]*(?:['\\x22],?[^\\]]*|,[^\\]]*\\]?|\\]?)\\][ \\t]*$")
+  r_id_attribute    := text.re_compile("^\\[(?:id=['\\x22]?|#|\\[)[A-Za-z_:{}][A-Za-z0-9_.:{}-]*(?:['\\x22]?,?[^\\]]*|,[^\\]]*\\]?|\\]?)\\][ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
