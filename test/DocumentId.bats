@@ -6,6 +6,18 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files with document ids in single quotes" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_single_quotes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Ignore files with document ids without quotes" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_no_quotes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore files with valid document ids that use shorthand syntax" {
   run run_vale "$BATS_TEST_FILENAME" ignore_shorthand_syntax.adoc
   [ "$status" -eq 0 ]
