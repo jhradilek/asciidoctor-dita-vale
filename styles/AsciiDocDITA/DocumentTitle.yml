@@ -12,7 +12,7 @@ script: |
   r_code_block      := text.re_compile("^(?:\\.{4,}|-{4,})[ \\t]*$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
-  r_document_title  := text.re_compile("^=[ \\t]+[^ \\t].*$")
+  r_document_title  := text.re_compile("^(?:=[ \\t]+[^ \\t].*|ifn?def::\\S*\\[=[ \\t]+[^ \\t].*\\][ \\t]*)$")
   r_snippet         := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:snippet)[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
