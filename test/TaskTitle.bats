@@ -48,6 +48,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore table cells that have similar syntax to block titles" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_table_cells.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore nested block titles" {
   run run_vale "$BATS_TEST_FILENAME" ignore_nested_titles.adoc
   [ "$status" -eq 0 ]

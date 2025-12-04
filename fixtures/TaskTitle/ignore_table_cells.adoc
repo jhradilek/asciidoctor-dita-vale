@@ -1,0 +1,10 @@
+// Table cells with vertical alignment operators:
+:_mod-docs-content-type: PROCEDURE
+
+[cols="2,1"]
+|===
+|First column |Second column
+
+.>|First cell
+|Second cell with a long paragraph so that the previous cell is visibly aligned to the bottom.
+|===
