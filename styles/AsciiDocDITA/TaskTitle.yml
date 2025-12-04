@@ -22,6 +22,7 @@ script: |
   r_image           := text.re_compile("^image::(?:\\S|\\S.*\\S)\\[.*\\][ \\t]*$")
   r_list_continue   := text.re_compile("^\\+[ \\t]*$")
   r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?|Additional resources)[ \\t]*$")
+  r_table_cell      := text.re_compile("^\\.[^ \\t|]+\\|")
   r_table           := text.re_compile("^\\|={3,}[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
@@ -82,7 +83,7 @@ script: |
       continue
     }
 
-    if r_block_title.match(line) && ! r_supported_title.match(line) {
+    if r_block_title.match(line) && ! r_supported_title.match(line) && ! r_table_cell.match(line) {
       if ! is_list_continue {
         expect_block = {begin: start, end: start + end - 1}
       }
