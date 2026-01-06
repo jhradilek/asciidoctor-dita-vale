@@ -1,0 +1,20 @@
+// An assembly file with recognized attribute file includes:
+:_mod-docs-content-type: ASSEMBLY
+
+include::_attributes/attributes.adoc[]
+include::_attributes/common-attributes.adoc[]
+include::_attributes/attributes-common.adoc[]
+
+include::attributes/attributes.adoc[]
+include::attributes/common-attributes.adoc[]
+include::attributes/attributes-common.adoc[]
+
+include::_common/attributes.adoc[]
+include::_common/common-attributes.adoc[]
+include::_common/attributes-common.adoc[]
+
+include::common/attributes.adoc[]
+include::common/common-attributes.adoc[]
+include::common/attributes-common.adoc[]
+
+A paragraph.

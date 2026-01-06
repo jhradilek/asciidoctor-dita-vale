@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore supported attribute includes" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_attribute_includes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore other content types" {
   run run_vale "$BATS_TEST_FILENAME" ignore_other_modules.adoc
   [ "$status" -eq 0 ]
