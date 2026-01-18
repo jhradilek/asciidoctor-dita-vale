@@ -1,4 +1,5 @@
 // A topic without the [role="_abstract"] attribute list definition:
+:_mod-docs-content-type: REFERENCE
 = Topic title
 
 A paragraph.

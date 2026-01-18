@@ -1,5 +1,6 @@
 // A topic with the [role="_abstract"] attribute list definition
 // commented out:
+:_mod-docs-content-type: PROCEDURE
 = Topic title
 
 //[role="_abstract"]
