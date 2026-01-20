@@ -1,0 +1,5 @@
+// An assembly without [role="_abstract"] should be ignored:
+:_mod-docs-content-type: ASSEMBLY
+= Assembly title
+
+A paragraph without abstract.

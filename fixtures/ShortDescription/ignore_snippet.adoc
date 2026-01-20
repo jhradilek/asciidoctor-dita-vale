@@ -1,0 +1,5 @@
+// A snippet without [role="_abstract"] should be ignored:
+:_mod-docs-content-type: SNIPPET
+= Snippet title
+
+A paragraph without abstract.

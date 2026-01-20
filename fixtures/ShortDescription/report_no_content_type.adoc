@@ -1,0 +1,4 @@
+// A file without a content type should still be validated:
+= Topic title
+
+A paragraph without abstract.
