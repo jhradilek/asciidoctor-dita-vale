@@ -4,18 +4,11 @@
 include::_attributes/attributes.adoc[]
 include::_attributes/common-attributes.adoc[]
 include::_attributes/attributes-common.adoc[]
+include::_attributes/document-attributes-global.adoc[]
 
 include::attributes/attributes.adoc[]
-include::_common/attributes.adoc[]
-include::common/attributes.adoc[]
-
-// Includes from _artifacts directory:
-include::_artifacts/document-attributes-global.adoc[]
 include::artifacts/attributes.adoc[]
-
-// Includes with relative parent path prefix:
-include::../_attributes/attributes.adoc[]
-include::../_artifacts/document-attributes-global.adoc[]
-include::../common/attributes.adoc[]
+include::common/attributes.adoc[]
+include::../attributes/attributes.adoc[]
 
 A paragraph.
