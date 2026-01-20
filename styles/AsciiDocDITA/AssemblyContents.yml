@@ -25,7 +25,7 @@ script: |
   // snippet files. As it is impossible to reliably identify these files without
   // reading their contents, the following is a workaround specifically for
   // openshift-docs:
-  r_attribute_file  := text.re_compile("^include::_?(?:attributes|common)/(?:attributes-[^/]+|[^/]*-?attributes)\\.adoc\\[.*\\][ \\t]*$")
+  r_attribute_file  := text.re_compile("^include::(?:\\.\\./)?_?(?:attributes|common|artifacts)/(?:attributes-[^/]+|[^/]*-?attributes[^/]*)\\.adoc\\[.*\\][ \\t]*$")
   r_snippet_file    := text.re_compile("^include::_?snippets/[^/]+\\.adoc\\[.*\\][ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
