@@ -1,0 +1,4 @@
+// An attribute definition file without an abstract role definition:
+:_mod-docs-content-type: ATTRIBUTES
+
+:product-name: AsciiDocDITA

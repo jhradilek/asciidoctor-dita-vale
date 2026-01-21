@@ -1,30 +1,26 @@
 # Suggest assigning the [role="_abstract"] attribute list to a paragraph to
-# be used as short description in DITA. Applies to PROCEDURE, CONCEPT,
-# REFERENCE content types, and files without a content type. Does not apply
-# to SNIPPET or ASSEMBLY.
+# be used as short description in DITA.
 ---
 extends: script
-message: 'Assign [role="\_abstract"] to the first paragraph in a concept, procedure, or reference module to use it as <shortdesc> in DITA.'
+message: "Assign [role=\"_abstract\"] to a paragraph to use it as <shortdesc> in DITA."
 level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw
 script: |
   text              := import("text")
-  matches           := []
+  matches           := [{begin: 0, end: 0}]
 
-  r_comment_line    := text.re_compile("^(//|//[^/].*)$")
+  r_abstract        := text.re_compile("^\\[role=(?:\"_abstract\"|'_abstract'|_abstract)\\][ \\t]*$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
-  r_excluded_type   := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]*(?i:snippet|assembly)[ \\t]*$")
-  r_any_content_type := text.re_compile("^:_(?:mod-docs-content|content|module)-type:")
-  r_abstract        := text.re_compile("^\\[role=(?:\"_abstract\"|'_abstract'|_abstract)\\]")
-  r_title           := text.re_compile("^=[ \\t]+.+$")
+  r_comment_line    := text.re_compile("^(//|//[^/].*)$")
+  r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:")
+  r_document_title  := text.re_compile("^(?:=[ \\t]+[^ \\t].*|ifn?def::\\S*\\[=[ \\t]+[^ \\t].*\\][ \\t]*)$")
+  r_excluded_type   := text.re_compile("[ \\t]+(?i:snippet|attributes)[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
   in_comment_block  := false
-  is_excluded       := false
-  has_abstract      := false
-  title_pos         := false
+  has_title         := false
   start             := 0
   end               := 0
 
@@ -44,21 +40,17 @@ script: |
     if in_comment_block { continue }
     if r_comment_line.match(line) { continue }
 
-    if r_excluded_type.match(line) {
-      is_excluded = true
+    if r_document_title.match(line) {
+      if ! has_title {
+        matches = [{begin: start, end: start + end - 1}]
+        has_title = true
+      }
       continue
     }
 
-    if r_title.match(line) && ! title_pos {
-      title_pos = {begin: start, end: start + end - 1}
-      continue
+    if (r_content_type.match(line) && r_excluded_type.match(line)) ||
+       r_abstract.match(line) {
+      matches = []
+      break
     }
-
-    if r_abstract.match(line) {
-      has_abstract = true
-    }
-  }
-
-  if ! is_excluded && ! has_abstract && title_pos {
-    matches = append(matches, title_pos)
   }
