@@ -1,0 +1,4 @@
+// An attribute definition file:
+:_mod-docs-content-type: ATTRIBUTES
+
+:product-name: AsciiDocDITA

@@ -13,7 +13,7 @@ script: |
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_document_title  := text.re_compile("^(?:=[ \\t]+[^ \\t].*|ifn?def::\\S*\\[=[ \\t]+[^ \\t].*\\][ \\t]*)$")
-  r_snippet         := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:snippet)[ \\t]*$")
+  r_excluded_type   := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:snippet|attributes)[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
@@ -44,7 +44,7 @@ script: |
     }
     if in_code_block { continue }
 
-    if r_snippet.match(line) || r_document_title.match(line) {
+    if r_excluded_type.match(line) || r_document_title.match(line) {
       matches = []
       break
     }
