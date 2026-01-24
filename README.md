@@ -69,6 +69,7 @@ The following rules have their severity set to `error`. The AsciiDoc markup repo
 | --- | --- |
 | EntityReference | DITA 1.3 supports five character entity references defined in the XML standard: `&amp;`, `&lt;`, `&gt;`, `&apos;`, and `&quot;`. Replace any other character entity references with an appropriate [built-in AsciiDoc attribute](https://docs.asciidoctor.org/asciidoc/latest/attributes/character-replacement-ref/). |
 | ExampleBlock | DITA 1.3 allows the `<example>` element to appear only within the main body of the topic. Do not use [example blocks](https://docs.asciidoctor.org/asciidoc/latest/blocks/example-blocks/) in sections, within other blocks, or as part of lists. |
+| MismatchedId | The opening and closing quote in [a custom ID assignment](https://docs.asciidoctor.org/asciidoc/latest/attributes/id/#block-assignment) must match. Make sure you use the same single quote or double quote on both sides of the ID. |
 | NestedSection | DITA 1.3 allows the `<section>` element to appear only within the main body of the topic. If [a level 2 section](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/) is needed, move it to a separate file. |
 | TaskExample | DITA 1.3 allows only one `<example>` element in a task topic. If multiple examples are needed, combine them in a single [example block](https://docs.asciidoctor.org/asciidoc/latest/blocks/example-blocks/). |
 | TaskSection | DITA 1.3 does not allow [sections](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/) in a task topic. If a section is needed, move it to a separate file. |
@@ -114,6 +115,6 @@ The following rules have their severity set to `suggestion`. These are convenien
 
 ## Copyright
 
-Copyright © 2025 Jaromir Hradilek
+Copyright © 2025, 2026 Jaromir Hradilek
 
 This program is free software, released under the terms of the MIT license. It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

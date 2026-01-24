@@ -1,0 +1,19 @@
+// A topic with an invalid custom ID definition:
+
+[id="custom-id']
+== Title
+
+[id='custom-id"]
+== Title
+
+[id="custom-id]
+== Title
+
+[id='custom-id]
+== Title
+
+[id=custom-id"]
+== Title
+
+[id=custom-id']
+== Title
