@@ -1,0 +1,10 @@
+// A topic with valid custom ID definitions:
+
+[id="custom-id"]
+== Title
+
+[id='custom-id']
+== Title
+
+[id=custom-id]
+== Title
