@@ -1,0 +1,54 @@
+name: DITA compatibility
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  content-readiness:
+    name: Content readiness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Vale
+        run: sudo snap install vale
+
+      - name: Configure Vale
+        run: |
+          cat <<-'EOF' > dita.ini
+          StylesPath = .vale/styles
+          MinAlertLevel = warning
+          Packages = https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip
+
+          [*.adoc]
+          BasedOnStyles = AsciiDocDITA
+          EOF
+
+          cat <<-'EOF' > dita.tmpl
+          {{range .Files}}
+          {{- $path := .Path -}}
+          {{- range .Alerts -}}
+          {{- $severity := .Severity -}}
+          {{$severity}}: {{$path}}: line {{.Line}}: {{.Message}} ({{.Check}})
+          {{end -}}
+          {{end -}}
+          EOF
+
+      - name: Install AsciiDocDITA
+        run: vale --config dita.ini sync
+
+      - name: Discover files
+        run: find {assemblies,modules} -type f -name '*.adoc' > RELEVANT_FILES
+
+      - name: Verify file naming conventions
+        run: |
+          ! cat RELEVANT_FILES | grep -e '[^0-9a-zA-Z/._-]'
+
+      - name: Analyze files
+        run: cat RELEVANT_FILES | xargs -n 4 vale --config dita.ini --output dita.tmpl > VALE_RESULTS || true
+
+      - name: Verify DITA compatibility
+        run: |
+          ! grep -he '^\(error\|warning\):' VALE_RESULTS
