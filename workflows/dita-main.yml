@@ -40,7 +40,7 @@ jobs:
         run: vale --config dita.ini sync
 
       - name: Discover files
-        run: find {assemblies,modules} -type f -name '*.adoc' > RELEVANT_FILES
+        run: find . -type f -name '*.adoc' > RELEVANT_FILES
 
       - name: Verify file naming conventions
         run: |
