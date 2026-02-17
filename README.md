@@ -4,6 +4,8 @@
 
 ## Installation
 
+### Command line
+
 1.  Install the latest available version of Vale as described in [the official documentation](https://vale.sh/docs/install).
 2.  Create a `.vale.ini` file in the main directory of your AsciiDoc project:
 
@@ -19,6 +21,38 @@
 
     ```console
     vale sync
+    ```
+
+### GitHub workflows
+
+To set up a workflow to validate all relevant files in a specific branch:
+
+1.  Copy the [workflows/dita-main.yml](workflows/dita-main.yml) file to the `.github/workflows/` directory in your GitHub repository.
+2.  Optional: Customize the list of branches to run the workflow on (default: `main`). For example, to run the workflow on `dev` and `experimental`:
+
+    ```ini
+    # Customize the list of branches to run this workflow on:
+    branches:
+      - dev
+      - experimental
+    ```
+3.  Optional: Customize the discovery of relevant AsciiDoc files (default: all `*.adoc` files). For example, to ignore the `README.adoc` file:
+
+    ```ini
+    # Customize the discovery of relevant files:
+    - name: Discover files
+      run: find . -type f -name '*.adoc' -not -name 'README.adoc' > RELEVANT_FILES
+    ```
+
+To set up a workflow to validate only files modified in a pull request:
+
+1.  Copy the [workflows/dita-pull.yml](workflows/dita-pull.yml) file to the `.github/workflows/` directory in your GitHub repository.
+2.  Optional: Customize the list of target branches for pull requests (default: `main`). For example, to run the workflow on pull request that target the `dev` branch:
+
+    ```ini
+    # Customize the list of target branches for pull requests:
+    branches:
+      - dev
     ```
 
 ## Usage
