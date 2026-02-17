@@ -1,13 +1,21 @@
+# A GitHub Actions workflow for the AsciiDocDITA[1] vale style.
+#
+# This workflow runs on a specific branch,  validates all relevant AsciiDoc
+# files, and reports markup that is problematic for the conversion to DITA.
+#
+# [1] https://github.com/jhradilek/asciidoctor-dita-vale
+
 name: DITA compatibility
 
 on:
   push:
+    # Customize the list of branches to run this workflow on:
     branches:
       - main
 
 jobs:
   content-readiness:
-    name: Content readiness
+    name: Relevant files
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,6 +47,7 @@ jobs:
       - name: Install AsciiDocDITA
         run: vale --config dita.ini sync
 
+      # Customize the discovery of relevant files:
       - name: Discover files
         run: find . -type f -name '*.adoc' > RELEVANT_FILES
 

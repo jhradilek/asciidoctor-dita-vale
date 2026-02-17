@@ -1,7 +1,16 @@
+# A GitHub Actions workflow for the AsciiDocDITA[1] vale style.
+#
+# This workflow runs on all pull requests for a specific branch,  validates
+# only modified AsciiDoc files,  and reports any markup that is problematic
+# for the conversion to DITA.
+#
+# [1] https://github.com/jhradilek/asciidoctor-dita-vale
+
 name: DITA compatibility
 
 on:
   pull_request:
+    # Customize the list of target branches for pull requests:
     branches:
       - main
     paths:
@@ -9,7 +18,7 @@ on:
 
 jobs:
   content-validation:
-    name: Content validation
+    name: Modified files
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
