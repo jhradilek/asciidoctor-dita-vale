@@ -1,0 +1,63 @@
+# A GitHub Actions workflow for the AsciiDocDITA[1] vale style.
+#
+# This workflow runs on a specific branch,  validates all relevant AsciiDoc
+# files, and reports markup that is problematic for the conversion to DITA.
+#
+# [1] https://github.com/jhradilek/asciidoctor-dita-vale
+
+name: DITA compatibility
+
+on:
+  push:
+    # Customize the list of branches to run this workflow on:
+    branches:
+      - main
+
+jobs:
+  content-readiness:
+    name: Relevant files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Vale
+        run: sudo snap install vale
+
+      - name: Configure Vale
+        run: |
+          cat <<-'EOF' > dita.ini
+          StylesPath = .vale/styles
+          MinAlertLevel = warning
+          Packages = https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip
+
+          [*.adoc]
+          BasedOnStyles = AsciiDocDITA
+          EOF
+
+          cat <<-'EOF' > dita.tmpl
+          {{range .Files}}
+          {{- $path := .Path -}}
+          {{- range .Alerts -}}
+          {{- $severity := .Severity -}}
+          {{$severity}}: {{$path}}: line {{.Line}}: {{.Message}} ({{.Check}})
+          {{end -}}
+          {{end -}}
+          EOF
+
+      - name: Install AsciiDocDITA
+        run: vale --config dita.ini sync
+
+      # Customize the discovery of relevant files:
+      - name: Discover files
+        run: find . -type f -name '*.adoc' > RELEVANT_FILES
+
+      - name: Verify file naming conventions
+        run: |
+          ! cat RELEVANT_FILES | grep -e '[^0-9a-zA-Z/._-]'
+
+      - name: Analyze files
+        run: cat RELEVANT_FILES | xargs -n 4 vale --config dita.ini --output dita.tmpl > VALE_RESULTS || true
+
+      - name: Verify DITA compatibility
+        run: |
+          ! grep -he '^\(error\|warning\):' VALE_RESULTS
