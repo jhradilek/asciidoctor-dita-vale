@@ -16,6 +16,12 @@
 
     [*.adoc]
     BasedOnStyles = AsciiDocDITA
+
+    # The rules below are based on recommended practices and do not prevent
+    # successful conversion to DITA.  If your product is not bound by these
+    # guidelines, uncomment the following lines to disable them:
+    #AsciiDocDITA.CalloutList = NO
+    #AsciiDocDITA.ShortDescription = NO
     ```
 3.  Download and install the `AsciiDocDITA` package:
 
