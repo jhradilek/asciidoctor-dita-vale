@@ -13,7 +13,7 @@ script: |
   r_any_title       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})[^ \\t.].*$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
-  r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:concept)")
+  r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:assembly|concept)")
   r_inline_link     := text.re_compile("(?:|link:|<)(?:|\\+\\+)(?:https?|file|ftp|irc)://[^ \\t\\[\\]]+(?:|\\+\\+)(?:|\\[.*?\\])>?")
   r_inline_xref     := text.re_compile("<<[A-Za-z0-9/.:{].*?>>")
   r_link_macro      := text.re_compile("(?:link|mailto):(?:|[^: \\t\\[][^: \\t\\[]*)\\[.*?\\]")
@@ -21,7 +21,7 @@ script: |
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
-  is_concept        := false
+  is_relevant       := false
   in_comment_block  := false
   in_add_resources  := false
   start             := 0
@@ -44,7 +44,7 @@ script: |
     if r_comment_line.match(line) { continue }
 
     if r_content_type.match(line) {
-      is_concept = true
+      is_relevant = true
       continue
     }
 
@@ -72,4 +72,8 @@ script: |
     for i, entry in r_inline_xref.find(line, -1) {
       matches = append(matches, {begin: start + entry[0].begin, end: start + entry[0].end - 1})
     }
+  }
+
+  if ! is_relevant {
+    matches = []
   }

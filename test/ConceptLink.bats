@@ -6,6 +6,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore links in other module types" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_other_modules.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report all link variations outside of additional resources" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_links.adoc
   [ "$status" -eq 0 ]
@@ -26,4 +32,11 @@ load test_helper
   [ "${lines[13]}" = "report_invalid_links.adoc:26:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[14]}" = "report_invalid_links.adoc:27:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[15]}" = "report_invalid_links.adoc:28:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+}
+
+@test "Report links in assemblies" {
+  run run_vale "$BATS_TEST_FILENAME" report_assemblies.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_assemblies.adoc:6:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
 }
