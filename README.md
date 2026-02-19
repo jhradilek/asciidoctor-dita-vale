@@ -68,19 +68,30 @@ To set up a workflow to validate only files modified in a pull request:
     ```console
     vale source_file.adoc
     ```
+*   Validate multiple AsciiDoc files:
+
+    ```console
+    $ vale source_file1.adoc source_file2.adoc source_file3.adoc
+    ```
+    Separate multiple files by using a single blank space.  
 *   Validate all AsciiDoc files in the current directory:
 
     ```console
     vale *.adoc
     ```
-*   Generate a report with each message on an individual line:
+*   Generate a report with each message on an individual line for all .adoc files from the current folder:
 
     ```console
     vale --output line *.adoc
     ```
 
     To import this report to a spreadsheet, make sure suggestions are disabled and select a colon (`:`) as a separator.
+*   Generate a report with each message on an individual line for specific files:
 
+    ```console
+    $ vale --output line source_file1.adoc source_file2.adoc source_file3.adoc
+    ```
+    Separate multiple files by using a single blank space.  
 *   Validate all AsciiDoc files in the current directory and all of its subdirectories:
 
     ```console
