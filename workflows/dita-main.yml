@@ -38,8 +38,7 @@ jobs:
           {{range .Files}}
           {{- $path := .Path -}}
           {{- range .Alerts -}}
-          {{- $severity := .Severity -}}
-          {{$severity}}: {{$path}}: line {{.Line}}: {{.Message}} ({{.Check}})
+          {{.Severity | upper}}: {{$path}}: line {{.Line}}: {{.Message}} ({{.Check}})
           {{end -}}
           {{end -}}
           EOF
