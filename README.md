@@ -22,6 +22,7 @@
     # guidelines, uncomment the following lines to disable them:
     #AsciiDocDITA.CalloutList = NO
     #AsciiDocDITA.ShortDescription = NO
+    #AsciiDocDITA.ConceptLink = NO
     ```
 3.  Download and install the `AsciiDocDITA` package:
 
@@ -125,6 +126,7 @@ The following rules have their severity set to `warning`. The AsciiDoc markup re
 | AuthorLine | AsciiDoc interprets the first line that directly follows the document title as an author line. Add an empty line after the document title. |
 | BlockTitle | In DITA 1.3, only the `<example>`, `<fig>`, and `<table>` elements can have a title. Do not assign [block titles](https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/) to other blocks such as paragraphs or lists. |
 | CalloutList | DITA 1.3 does not support [callouts](https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/). Rewrite your content to avoid the need for callout numbers and replace the explanation with simple sentences, [an unordered list](https://docs.asciidoctor.org/asciidoc/latest/lists/unordered/), or [a description list](https://docs.asciidoctor.org/asciidoc/latest/lists/description/) as appropriate. |
+| ConceptLink | To improve content usability and user focus, links and cross references in the main body of a concept topic are discouraged. If the links and cross references are needed, move them to the *Additional resources* section. |
 | ContentType | Without a clear content type definition, the Vale style cannot reliably report problems related to procedure modules such as `TaskSection` or `TaskExample`. Add the correct `:_mod-docs-content-type:` definition at the top of the file. |
 | DiscreteHeading | DITA 1.3 does not support discrete headings. Depending on your use case, use [a description list](https://docs.asciidoctor.org/asciidoc/latest/lists/description/), [a level 1 section](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/), or move the content to a separate file. |
 | DocumentId | DITA 1.3 requires topics to have an ID. Assign [a valid ID](https://docs.asciidoctor.org/asciidoc/latest/attributes/id/) to [the document title](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/). |

@@ -1,0 +1,6 @@
+// Links and cross references outside of additional resources:
+:_mod-docs-content-type: ASSEMBLY
+
+= Topic title
+
+* link:/absolute/path/to/file.ext[]
