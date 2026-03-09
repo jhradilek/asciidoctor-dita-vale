@@ -1,0 +1,10 @@
+// A potentially valid include statement in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+include::first_step.adoc[]
+
+. A valid step.
+
+include::last_step.adoc[]

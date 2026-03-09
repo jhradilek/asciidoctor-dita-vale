@@ -54,6 +54,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore include directives" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_includes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report content other than steps in procedures" {
   run run_vale "$BATS_TEST_FILENAME" report_non_steps.adoc
   [ "$status" -eq 0 ]
