@@ -1,0 +1,24 @@
+// Valid include directives in a procedure module:
+:_mod-docs-content-type: PROCEDURE
+
+include::attributes.adoc[]
+
+= Topic title
+
+A paragraph.
+
+include::common_warning.adoc[]
+
+.Prerequisites
+
+include::common_prerequisites.adoc[]
+
+.Procedure
+
+. A valid step.
+
+. Another valid step.
+
+.Next steps
+
+include::common_next_step.adoc[]
