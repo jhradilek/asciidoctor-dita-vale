@@ -1,7 +1,7 @@
 # Report content other than steps in procedures.
 ---
 extends: script
-message: "Content other than a single list cannot be mapped to DITA tasks."
+message: "Content other than a single list cannot be mapped to DITA steps."
 level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw
