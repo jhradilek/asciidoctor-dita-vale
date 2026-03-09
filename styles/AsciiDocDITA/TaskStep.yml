@@ -1,7 +1,7 @@
 # Report content other than steps in procedures.
 ---
 extends: script
-message: "Content other than a single list cannot be mapped to DITA tasks."
+message: "Content other than a single list cannot be mapped to DITA steps."
 level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw
@@ -20,6 +20,7 @@ script: |
   r_dlist           := text.re_compile("^[ \\t]*\\S.*?(?::{2,4}|;;)(?:|[ \\t]+.*)$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_example_delim   := text.re_compile("^={4,}[ \\t]*$")
+  r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[.*\\][ \\t]*$")
   r_list_continue   := text.re_compile("^\\+[ \\t]*$")
   r_other_block     := text.re_compile("^(?:\\.{4,}|-{4,}|={4,}|-{2}|\\|={3,})[ \\t]*$")
   r_procedure       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Procedure[ \\t]*$")
@@ -60,6 +61,7 @@ script: |
     }
 
     if r_conditional.match(line) { continue }
+    if r_include.match(line) { continue }
     if r_attribute.match(line) { continue }
     if r_attribute_list.match(line) && ! r_admonition.match(line) {
       continue

@@ -1,0 +1,14 @@
+// Potentially problematic include directives in procedure steps:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+include::first_step.adoc[]
+
+. A valid step.
+
+include::third_step.adoc[]
+
+. Another valid step.
+
+include::last_step.adoc[]
