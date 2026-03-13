@@ -1,7 +1,7 @@
 // A first paragraph recognized as an author line:
 = Topic title
 
-An author line.
+A paragraph.
 
 // Only the document heading can have author lines:
 = Another title

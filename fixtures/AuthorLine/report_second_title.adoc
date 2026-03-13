@@ -1,0 +1,5 @@
+// A second document heading interpreted as an author line:
+= Topic title
+= Another title
+
+A paragraph.
