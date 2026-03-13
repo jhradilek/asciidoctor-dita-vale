@@ -36,6 +36,19 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore conditional directives around titles" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_conditionals.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Report author lines after conditional titles" {
+  run run_vale "$BATS_TEST_FILENAME" report_conditionals.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_conditionals.adoc:5:1:AsciiDocDITA.AuthorLine:Author lines are not supported for topics." ]
+}
+
 @test "Report author lines only once" {
   run run_vale "$BATS_TEST_FILENAME" report_author_line.adoc
   [ "$status" -eq 0 ]

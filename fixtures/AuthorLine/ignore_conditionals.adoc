@@ -1,0 +1,9 @@
+// A document with conditional directives around the title:
+ifndef::openshift-origin[]
+= Topic title
+endif::openshift-origin[]
+ifdef::openshift-origin[]
+= Alternative title
+endif::openshift-origin[]
+
+A paragraph.

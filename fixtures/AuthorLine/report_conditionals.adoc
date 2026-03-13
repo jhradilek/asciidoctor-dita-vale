@@ -1,0 +1,5 @@
+// A document with an author line after a conditional title:
+ifdef::some-attribute[]
+= Topic title
+endif::some-attribute[]
+An author line.
