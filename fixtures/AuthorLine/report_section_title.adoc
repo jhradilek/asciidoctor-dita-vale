@@ -1,0 +1,5 @@
+// A level 1 section interpreted as an author line:
+= Topic title
+== Section title
+
+A paragraph.
