@@ -10,5 +10,11 @@ include::attributes/attributes.adoc[]
 include::artifacts/attributes.adoc[]
 include::common/attributes.adoc[]
 include::../attributes/attributes.adoc[]
+include::../../attributes/attributes.adoc[]
+
+include::attributes.adoc[]
+include::_attributes.adoc[]
+include::../attributes.adoc[]
+include::../../attributes.adoc[]
 
 A paragraph.

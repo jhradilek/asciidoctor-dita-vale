@@ -1,0 +1,9 @@
+// An assembly file with recognized snippets file includes:
+:_mod-docs-content-type: ASSEMBLY
+
+include::_snippets/snip_snippet-file.adoc[]
+include::snippets/common-snippets.adoc[]
+include::../snippets/snippet-file.adoc[]
+include::../../snippets/snippet-file.adoc[]
+
+A paragraph.
