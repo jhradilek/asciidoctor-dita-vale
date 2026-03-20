@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore links in code blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report all link variations outside of additional resources" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_links.adoc
   [ "$status" -eq 0 ]
