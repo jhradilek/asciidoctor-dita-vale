@@ -1,0 +1,14 @@
+// Links and cross references in a code block:
+:_mod-docs-content-type: CONCEPT
+
+= Topic title
+
+[literal,subs="+quotes"]
+....
+https://example.com
+....
+
+[source,asciidoc]
+----
+https://example.com
+----
