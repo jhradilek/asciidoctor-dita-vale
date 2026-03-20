@@ -1,0 +1,7 @@
+// A module with an author line in conditions:
+= Topic title
+ifndef::custom-attribute[]
+An author line.
+endif::[]
+
+A paragraph.

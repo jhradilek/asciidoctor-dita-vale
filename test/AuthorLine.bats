@@ -36,6 +36,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore alternative level 0 sections in conditions" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_conditional_titles.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report author lines only once" {
   run run_vale "$BATS_TEST_FILENAME" report_author_line.adoc
   [ "$status" -eq 0 ]
@@ -48,6 +54,34 @@ load test_helper
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_comments.adoc:7:1:AsciiDocDITA.AuthorLine:Author lines are not supported for topics." ]
+}
+
+@test "Report author lines in conditions" {
+  run run_vale "$BATS_TEST_FILENAME" report_conditional_author_line.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_conditional_author_line.adoc:4:1:AsciiDocDITA.AuthorLine:Author lines are not supported for topics." ]
+}
+
+@test "Report only first level 0 section in condition" {
+  run run_vale "$BATS_TEST_FILENAME" report_first_conditional_title.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_first_conditional_title.adoc:5:1:AsciiDocDITA.AuthorLine:Author lines are not supported for topics." ]
+}
+
+@test "Report only second level 0 section in condition" {
+  run run_vale "$BATS_TEST_FILENAME" report_second_conditional_title.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_second_conditional_title.adoc:4:1:AsciiDocDITA.AuthorLine:Author lines are not supported for topics." ]
+}
+
+@test "Report multiple second level 0 sections in the same condition" {
+  run run_vale "$BATS_TEST_FILENAME" report_same_condition_title.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_same_condition_title.adoc:4:1:AsciiDocDITA.AuthorLine:Author lines are not supported for topics." ]
 }
 
 @test "Report level 0 sections interpreted as author lines" {

@@ -1,0 +1,9 @@
+// A module with alternative document titles in conditions:
+ifdef::custom-attribute[]
+= Topic title
+endif::custom-attribute[]
+ifndef::custom-attribute[]
+= Alternative topic title
+endif::[]
+
+A paragraph.
