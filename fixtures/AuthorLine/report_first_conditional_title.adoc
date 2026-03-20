@@ -1,0 +1,7 @@
+// A singular a single document title in a condition:
+ifdef::custom-attribute[]
+= Topic title
+endif::custom-attribute[]
+= Alternative topic title
+
+A paragraph.
