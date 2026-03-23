@@ -15,6 +15,7 @@ script: |
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:assembly|concept)")
+  r_domain_markup   := text.re_compile("(?:https?|file|ftp|irc):///?[_*`#~^]{1,2}[^_*`#~^]*?[_*`#~^]{1,2}")
   r_inline_link     := text.re_compile("(?:|link:|<)(?:|\\+\\+)(?:https?|file|ftp|irc)://[^ \\t\\[\\]]+(?:|\\+\\+)(?:|\\[.*?\\])>?")
   r_inline_xref     := text.re_compile("<<[A-Za-z0-9/.:{].*?>>")
   r_link_macro      := text.re_compile("(?:link|mailto):(?:|[^: \\t\\[][^: \\t\\[]*)\\[.*?\\]")
@@ -28,6 +29,21 @@ script: |
   in_add_resources  := false
   start             := 0
   end               := 0
+
+  match_link := func(regex, line) {
+    for i, entry in regex.find(line, -1) {
+      link := entry[0]
+
+      if (link.begin > 0) && text.has_prefix(text.substr(line, link.begin - 1, link.begin), '\\') {
+        continue
+      }
+      if r_domain_markup.match(link.text) {
+        continue
+      }
+
+      matches = append(matches, {begin: start + link.begin, end: start + link.end - 1})
+    }
+  }
 
   for line in document {
     start += end
@@ -73,18 +89,10 @@ script: |
 
     if in_add_resources { continue }
 
-    for i, entry in r_link_macro.find(line, -1) {
-      matches = append(matches, {begin: start + entry[0].begin, end: start + entry[0].end - 1})
-    }
-    for i, entry in r_inline_link.find(line, -1) {
-      matches = append(matches, {begin: start + entry[0].begin, end: start + entry[0].end - 1})
-    }
-    for i, entry in r_xref_macro.find(line, -1) {
-      matches = append(matches, {begin: start + entry[0].begin, end: start + entry[0].end - 1})
-    }
-    for i, entry in r_inline_xref.find(line, -1) {
-      matches = append(matches, {begin: start + entry[0].begin, end: start + entry[0].end - 1})
-    }
+    match_link(r_link_macro, line)
+    match_link(r_inline_link, line)
+    match_link(r_xref_macro, line)
+    match_link(r_inline_xref, line)
   }
 
   if ! is_relevant {

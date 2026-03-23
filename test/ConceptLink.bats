@@ -18,6 +18,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore escaped links" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_escaped_links.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report all link variations outside of additional resources" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_links.adoc
   [ "$status" -eq 0 ]

@@ -1,0 +1,16 @@
+// Escaped links with attribute references:
+:_mod-docs-content-type: CONCEPT
+
+= Topic title
+
+* \https://example.com/page.html#anchor
+* <\ftp://example.com/downloads/>
+
+* https://_example.com_/page.html#anchor
+* https://*example.com*/page.html#anchor
+* https://`example.com`/page.html#anchor
+* https://#example.com#/page.html#anchor
+* https://~example.com~/page.html#anchor
+* https://^example.com^/page.html#anchor
+* https://__example.com__/page.html#anchor
+* https://_{ExampleURL}_:8443/path/_{ProjectName}_Path
