@@ -69,3 +69,22 @@ A note.
 ====
 A note.
 ====
+
+// An admonition title after an oddly placed ID:
+[NOTE]
+[id="admonition-id"]
+.An admonition title
+====
+A note.
+====
+
+[NOTE]
+[#admonition-id]
+.An admonition title
+====
+A note.
+====
+
+.An admonition title
+[id="admonition-id"]
+NOTE: A note.
