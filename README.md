@@ -127,7 +127,7 @@ The following rules have their severity set to `warning`. The AsciiDoc markup re
 | BlockTitle | In DITA 1.3, only the `<example>`, `<fig>`, and `<table>` elements can have a title. Do not assign [block titles](https://docs.asciidoctor.org/asciidoc/latest/blocks/add-title/) to other blocks such as paragraphs or lists. |
 | CalloutList | DITA 1.3 does not support [callouts](https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/). Rewrite your content to avoid the need for callout numbers and replace the explanation with simple sentences, [an unordered list](https://docs.asciidoctor.org/asciidoc/latest/lists/unordered/), or [a description list](https://docs.asciidoctor.org/asciidoc/latest/lists/description/) as appropriate. |
 | ConceptLink | To improve content usability and user focus, links and cross references in the main body of a concept topic are discouraged. If the links and cross references are needed, move them to the *Additional resources* section. |
-| ContentType | Without a clear content type definition, the Vale style cannot reliably report problems related to procedure modules such as `TaskSection` or `TaskExample`. Add the correct `:_mod-docs-content-type:` definition at the top of the file. |
+| ContentType | Without a clear content type definition, the Vale style cannot reliably report problems relevant for specific topic types. Add the correct `:_mod-docs-content-type:` definition at the top of the file. |
 | DiscreteHeading | DITA 1.3 does not support discrete headings. Depending on your use case, use [a description list](https://docs.asciidoctor.org/asciidoc/latest/lists/description/), [a level 1 section](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/), or move the content to a separate file. |
 | DocumentId | DITA 1.3 requires topics to have an ID. Assign [a valid ID](https://docs.asciidoctor.org/asciidoc/latest/attributes/id/) to [the document title](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/). |
 | DocumentTitle | DITA 1.3 requires topics to have a title. Add [a document title](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/) if it is an assembly or a module, or add the `:_mod-docs-content-type: SNIPPET` definition at the top of the file to mark it as a snippet. |
@@ -155,6 +155,25 @@ The following rules have their severity set to `suggestion`. These are convenien
 | ConditionalCode | Lists all `ifdef`, `ifndef`, and `ifeval` [conditional statements](https://docs.asciidoctor.org/asciidoc/latest/directives/conditionals/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
 | IncludeDirective | Lists all [include directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include/) in the file. Use this information to decide if include directives should be processed during conversion. |
 | TagDirective | Lists all [tag directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include-tagged-regions/) in the file. Use this information to decide how to approach conditional content after conversion. |
+
+## Recognized content types
+
+To report problems relevant for specific topic types, the Vale rules recognize the following `:_mod-docs-content-type:` attribute definition values:
+
+| Value | Explanation |
+| --- | --- |
+| ASSEMBLY | Identifies the AsciiDoc file as a modular documentation [assembly](https://redhat-documentation.github.io/modular-docs/#forming-assemblies). This implies that the assembly file follows the modular documentation guidelines and in addition to include directives, it contains a title and an introduction. |
+| ATTRIBUTES | Identifies the AsciiDoc file as an attribute definition file. This implies that the file is only used to provide attribute definitions and does not contain any printable content. |
+| CONCEPT | Identifies the AsciiDoc file as a modular documentation [concept module](https://redhat-documentation.github.io/modular-docs/#creating-concept-modules). |
+| PROCEDURE | Identifies the AsciiDoc file as a modular documentation [procedure module](https://redhat-documentation.github.io/modular-docs/#con-creating-procedure-modules). |
+| REFERENCE | Identifies the AsciiDoc file as a modular documentation [reference module](https://redhat-documentation.github.io/modular-docs/#creating-reference-modules). |
+| SNIPPET | Identifies the AsciiDoc file as a modular documentation [text snippet](https://redhat-documentation.github.io/modular-docs/#using-text-snippets). |
+
+For example, to identify an AsciiDoc file as an attribute definition file:
+
+```asciidoc
+:_mod-docs-content-type: ATTRIBUTES
+```
 
 ## Copyright
 
