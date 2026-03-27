@@ -1,4 +1,11 @@
 # Report unsupported titles inside of procedure modules.
+#
+# DITA 1.3 expects task topics to be composed of optional elements: <prereq>,
+# <context>, <steps> or <steps-unordered>, <result>, <tasktroubleshooting>,
+# <example>, and <postreq>. These elements directly correspond to block titles
+# in AsciiDoc: Prerequisite/Prerequisites, Procedure, Verification/Result/
+# Results, Troubleshooting/Troubleshooting step/Troubleshooting steps, and
+# Next step/Next steps. Do not use any other block titles.
 ---
 extends: script
 message: "Unsupported titles cannot be mapped to DITA tasks."

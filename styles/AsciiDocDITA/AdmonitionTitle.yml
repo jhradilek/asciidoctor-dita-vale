@@ -1,4 +1,7 @@
 # Report that admonition titles are not supported.
+#
+# In DITA 1.3, the <note> element cannot have a title. Do not assign block
+# titles to admonitions.
 ---
 extends: script
 message: "Admonition titles are not supported in DITA."

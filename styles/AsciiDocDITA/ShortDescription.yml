@@ -1,5 +1,9 @@
 # Suggest assigning the [role="_abstract"] attribute list to a paragraph to
 # be used as short description in DITA.
+#
+# DITA 1.3 supports the <shortdesc> element to provide a short description of
+# the topic. Assign [role="_abstract"] to the paragraph you want to convert to
+# the <shortdesc> element.
 ---
 extends: script
 message: "Assign [role=\"_abstract\"] to a paragraph to use it as <shortdesc> in DITA."

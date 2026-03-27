@@ -1,4 +1,9 @@
 # Report text outside of links in additional resources.
+#
+# In DITA 1.3, the <related-links> element can only contain links. Format
+# additional resources as an unordered list, remove lines that do not contain a
+# link or a cross reference, and remove any text that precedes or follows a
+# link or a cross reference.
 ---
 extends: script
 message: "Content other than links cannot be mapped to DITA related-links."

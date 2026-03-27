@@ -1,4 +1,8 @@
 # Report unsupported character entity references.
+#
+# DITA 1.3 supports five character entity references defined in the XML
+# standard: &amp;, &lt;, &gt;, &apos;, and &quot;. Replace any other character
+# entity references with an appropriate built-in AsciiDoc attribute.
 ---
 extends: script
 message: "HTML character entity references are not supported in DITA."

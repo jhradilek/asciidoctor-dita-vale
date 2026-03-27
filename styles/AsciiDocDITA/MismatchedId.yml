@@ -1,4 +1,7 @@
 # Report mismatched quotes in a custom ID.
+#
+# The opening and closing quote in a custom ID assignment must match. Make sure
+# you use the same single quote or double quote on both sides of the ID.
 ---
 extends: existence
 message: "The quotes in the ID are mismatched."

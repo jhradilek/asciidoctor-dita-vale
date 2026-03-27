@@ -1,4 +1,10 @@
 # Report duplicate titles inside of procedure modules.
+#
+# DITA 1.3 expects task topics to be composed of optional elements: <prereq>,
+# <context>, <steps> or <steps-unordered>, <result>, <tasktroubleshooting>,
+# <example>, and <postreq>. Because each element can appear only once in a
+# DITA task, duplicate titles are not allowed. Remove any duplicate titles or
+# combine them into one.
 ---
 extends: script
 message: "Duplicate titles cannot be mapped to DITA tasks."
