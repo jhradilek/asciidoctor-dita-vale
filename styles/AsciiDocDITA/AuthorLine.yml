@@ -1,4 +1,7 @@
 # Report accidental author lines.
+#
+# AsciiDoc interprets the first line that directly follows the document title
+# as an author line. Add an empty line after the document title.
 ---
 extends: script
 message: "Author lines are not supported for topics."

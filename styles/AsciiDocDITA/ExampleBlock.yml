@@ -1,4 +1,8 @@
 # Report unsupported example blocks.
+#
+# DITA 1.3 allows the <example> element to appear only within the main body of
+# the topic. Do not use example blocks in sections, within other blocks, or as
+# part of lists.
 ---
 extends: script
 message: "Examples can not be inside of other blocks in DITA."

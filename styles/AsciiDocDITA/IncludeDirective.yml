@@ -1,4 +1,7 @@
 # Report include directives.
+#
+# Lists all include directives in the file. Use this information to decide if
+# include directives should be processed during conversion.
 ---
 extends: existence
 message: "%s"

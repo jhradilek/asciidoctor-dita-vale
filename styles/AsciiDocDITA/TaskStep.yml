@@ -1,4 +1,8 @@
 # Report content other than steps in procedures.
+#
+# DITA 1.3 allows only one <steps> or <steps-unordered> element in a task
+# topic. Verify that any content that follows the Procedure block title is
+# part of a single ordered or unordered list.
 ---
 extends: script
 message: "Content other than a single list cannot be mapped to DITA steps."
