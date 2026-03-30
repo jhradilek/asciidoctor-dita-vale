@@ -13,7 +13,7 @@ load test_helper
 }
 
 @test "Ignore files with the IGNORE content type" {
-  run run_vale "$BATS_TEST_FILENAME" ignore_ignore_type.adoc
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
   [ "$status" -eq 0 ]
   [ "${lines[0]}" = "" ]
 }
