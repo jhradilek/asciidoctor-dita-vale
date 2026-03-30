@@ -1,4 +1,7 @@
 # Report sections inside of procedure modules.
+#
+# DITA 1.3 does not allow sections in a task topic. If a section is needed,
+# move it to a separate file.
 ---
 extends: script
 message: "Sections are not allowed in DITA tasks."

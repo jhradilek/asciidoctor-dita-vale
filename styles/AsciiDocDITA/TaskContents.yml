@@ -1,4 +1,7 @@
 # Report a missing procedure title in a procedure module.
+#
+# To correctly map contents to <steps> or <steps-unordered> in DITA 1.3, all
+# procedure modules must contain the Procedure block title in AsciiDoc.
 ---
 extends: script
 message: "The '.Procedure' block title is missing."

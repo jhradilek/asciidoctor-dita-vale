@@ -1,4 +1,6 @@
 # Report that equations and formulas are not implemented.
+#
+# The conversion tooling does not implement LaTeX and AsciiMath formulas.
 ---
 extends: existence
 message: "Equations and formulas are not implemented."

@@ -1,4 +1,8 @@
 # Report links and cross references outside of Additional resources in concept modules.
+#
+# To improve content usability and user focus, links and cross references in
+# the main body of a concept topic are discouraged. If the links and cross
+# references are needed, move them to the Additional resources section.
 ---
 extends: script
 message: "Move all links and cross references to Additional resources."

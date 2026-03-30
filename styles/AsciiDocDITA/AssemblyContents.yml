@@ -1,4 +1,8 @@
 # Report unexpected contents in assemblies.
+#
+# In assemblies, include directives can be followed only by the Additional
+# resources section. Do not place any other contents between or after include
+# directives.
 ---
 extends: script
 message: "Content other than additional resources cannot follow include directives."

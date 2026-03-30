@@ -1,4 +1,7 @@
 # Report extra examples inside of procedure modules.
+#
+# DITA 1.3 allows only one <example> element in a task topic. If multiple
+# examples are needed, combine them in a single example block.
 ---
 extends: script
 message: "Examples are allowed only once in DITA tasks."
