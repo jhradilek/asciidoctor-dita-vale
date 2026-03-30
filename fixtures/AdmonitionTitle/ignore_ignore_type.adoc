@@ -1,0 +1,8 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+.An admonition title
+[NOTE]
+====
+A note.
+====
