@@ -60,4 +60,4 @@ jobs:
 
       - name: Verify DITA compatibility
         run: |
-          ! grep -he '^\(error\|warning\):' VALE_RESULTS
+          ! grep -hie '^\(error\|warning\):' VALE_RESULTS
