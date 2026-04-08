@@ -56,7 +56,7 @@ jobs:
       - name: Analyze files
         env:
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: echo "$CHANGED_FILES" | xargs -n 4 vale --config dita.ini --output dita.tmpl > VALE_RESULTS || true
+        run: echo "$CHANGED_FILES" | xargs -r -n 4 vale --config dita.ini --output dita.tmpl > VALE_RESULTS || true
 
       - name: Verify DITA compatibility
         run: |
