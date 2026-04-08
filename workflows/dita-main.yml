@@ -55,7 +55,7 @@ jobs:
           ! cat RELEVANT_FILES | grep -e '[^0-9a-zA-Z/._-]'
 
       - name: Analyze files
-        run: cat RELEVANT_FILES | xargs -n 4 vale --config dita.ini --output dita.tmpl > VALE_RESULTS || true
+        run: cat RELEVANT_FILES | xargs -r -n 4 vale --config dita.ini --output dita.tmpl > VALE_RESULTS || true
 
       - name: Verify DITA compatibility
         run: |
