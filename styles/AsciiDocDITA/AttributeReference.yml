@@ -12,6 +12,7 @@ nonword: true
 tokens:
   - '(?<!\$)\{([0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\}'
 exceptions:
+  # Character replacement attributes:
   - blank
   - empty
   - sp
@@ -42,3 +43,35 @@ exceptions:
   - two-semicolons
   - cpp
   - pp
+  # Intrinsic document attributes:
+  - backend
+  - 'backend-[0-9-A-Za-z_-]+'
+  - basebackend
+  - 'basebackend-[0-9-A-Za-z_-]+'
+  - docdate
+  - docdatetime
+  - docdir
+  - docfile
+  - docfilesuffix
+  - docname
+  - doctime
+  - 'doctype-[0-9-A-Za-z_-]+'
+  - docyear
+  - embedded
+  - filetype
+  - 'filetype-[0-9-A-Za-z_-]+'
+  - htmlsyntax
+  - localdate
+  - localdatetime
+  - localtime
+  - localyear
+  - outdir
+  - outfile
+  - outfilesuffix
+  - safe-mode-level
+  - safe-mode-name
+  - safe-mode-unsafe
+  - safe-mode-safe
+  - safe-mode-server
+  - safe-mode-secure
+  - user-home
