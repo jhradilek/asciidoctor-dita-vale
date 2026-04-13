@@ -6,8 +6,20 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore intrinsic attribute references" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_intrinsic_attributes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore bash variables" {
   run run_vale "$BATS_TEST_FILENAME" ignore_bash_variables.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Ignore spec file variables" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_spec_variables.adoc
   [ "$status" -eq 0 ]
   [ "${lines[0]}" = "" ]
 }
