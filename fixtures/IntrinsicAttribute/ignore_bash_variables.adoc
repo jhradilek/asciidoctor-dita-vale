@@ -1,0 +1,6 @@
+// Bash variables that look similar to attributes:
+
+[source,terminal]
+----
+$ wget "https://${backend}/policy.json"
+----

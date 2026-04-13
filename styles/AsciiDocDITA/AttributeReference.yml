@@ -1,7 +1,7 @@
 # Report custom attribute references.
 #
-# Lists all attribute references in the file. Use this information to decide
-# which attribute definitions to supply during conversion.
+# Lists all custom attribute references in the file. Use this information
+# to decide which attribute definitions to supply during conversion.
 ---
 extends: existence
 message: "%s"
