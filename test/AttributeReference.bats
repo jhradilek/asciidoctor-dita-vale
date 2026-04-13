@@ -18,6 +18,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore spec file variables" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_spec_variables.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report custom attribute references" {
   run run_vale "$BATS_TEST_FILENAME" report_custom_attributes.adoc
   [ "$status" -eq 0 ]

@@ -10,7 +10,7 @@ link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#sug
 scope: raw
 nonword: true
 tokens:
-  - '(?<!\$)\{([0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\}'
+  - '(?<![\$%])\{([0-9A-Za-z_][0-9A-Za-z_-]*|set:.+?|counter2?:.+?)\}'
 exceptions:
   # Character replacement attributes:
   - blank

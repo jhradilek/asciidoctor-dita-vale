@@ -1,0 +1,6 @@
+// Bash variables that look similar to attributes:
+
+[source,subs="+quotes"]
+----
+cp -a ./%{docdir}/* %{buildroot}%{gem_dir}/
+----
