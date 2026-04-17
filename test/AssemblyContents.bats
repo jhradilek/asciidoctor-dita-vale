@@ -48,6 +48,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files with the IGNORE content type" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report code blocks between or after includes" {
   run run_vale "$BATS_TEST_FILENAME" report_code_blocks.adoc
   [ "$status" -eq 0 ]

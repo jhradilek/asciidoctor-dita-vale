@@ -22,6 +22,7 @@ script: |
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:assembly)[ \\t]*$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_id_attribute    := text.re_compile("^\\[(?:id=['\\x22]|#|\\[)[A-Za-z_:{}][A-Za-z0-9_.:{}-]*(?:['\\x22],?[^\\]]*|,[^\\]]*\\]?|\\]?)\\][ \\t]*$")
+  r_ignore_type     := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:ignore)[ \\t]*$")
   r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[.*\\][ \\t]*$")
   r_role_attribute  := text.re_compile("^\\[(?:role=['\\x22]|\\.).*['\\x22]?\\][ \\t]*$")
 
@@ -56,6 +57,11 @@ script: |
     }
     if in_comment_block { continue }
     if r_comment_line.match(line) { continue }
+
+    if r_ignore_type.match(line) {
+      matches = []
+      break
+    }
 
     if r_content_type.match(line) {
       is_assembly = true

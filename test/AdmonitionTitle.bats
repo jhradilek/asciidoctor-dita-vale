@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files with the IGNORE content type" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report admonition title variations" {
   run run_vale "$BATS_TEST_FILENAME" report_admonition_title.adoc
   [ "$status" -eq 0 ]
