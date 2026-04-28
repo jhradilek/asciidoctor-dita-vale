@@ -30,6 +30,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore map files" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_map.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report files with [role=“_abstract”] or [role=‘_abstract’]" {
   run run_vale "$BATS_TEST_FILENAME" report_curly_quotes.adoc
   [ "$status" -eq 0 ]
