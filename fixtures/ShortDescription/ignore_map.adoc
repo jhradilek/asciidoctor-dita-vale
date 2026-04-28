@@ -1,0 +1,5 @@
+// A map without [role="_abstract"] should be ignored:
+:_mod-docs-content-type: MAP
+= Snippet title
+
+include::another_file.adoc[leveloffset=+1]
