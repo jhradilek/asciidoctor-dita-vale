@@ -5,16 +5,29 @@
 
 * link:{DOCUMENT_URL}[link text]
 * link:++{DOCUMENT_URL}++[link text]
-* link:https://example.com/docs/version-{ProductVersion}/title[link text]
+* link:https://{DOCUMENT_URL}[link text]
 * link:{BaseURL}/docs/version-{ProductVersion}/title[link text]
-* https://example.com/docs/version-{ProductVersion}/title
+
+* https://{DOCUMENT_URL}[link text]
+* https://{DomainName}.com[link text]
+* https://example.com/{UrlFragment}[link text]
+
+* http://{DOCUMENT_URL}[link text]
+* file://{DOCUMENT_URL}[link text]
+* ftp://{DOCUMENT_URL}[link text]
+* irc://{DOCUMENT_URL}[link text]
+
+* mailto:{EmailAddress}[]
+* mailto:{UserName}@example.com[]
+* mailto:admin@{DomainName}[]
+
 * <ftp://{SERVER_NAME}/downloads/>
-* link:{ProductURL}[]
 * https://{ProductURL}
 
 * xref:{AnchorFragment}[]
 * xref:{AnchorFragment}-suffix[]
 * xref:prefix-{AnchorFragment}[link text]
+
 * <<{AnchorFragment}>>
 * <<{AnchorFragment}-suffix>>
 * <<prefix-{AnchorFragment}>>
