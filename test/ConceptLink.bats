@@ -46,6 +46,27 @@ load test_helper
   [ "${lines[15]}" = "report_invalid_links.adoc:28:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
 }
 
+@test "Report links with attribute references" {
+  run run_vale "$BATS_TEST_FILENAME" report_attribute_references.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 15 ]
+  [ "${lines[0]}" = "report_attribute_references.adoc:6:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[1]}" = "report_attribute_references.adoc:7:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[2]}" = "report_attribute_references.adoc:8:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[3]}" = "report_attribute_references.adoc:9:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[4]}" = "report_attribute_references.adoc:10:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[5]}" = "report_attribute_references.adoc:11:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[6]}" = "report_attribute_references.adoc:12:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[7]}" = "report_attribute_references.adoc:13:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[8]}" = "report_attribute_references.adoc:15:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[9]}" = "report_attribute_references.adoc:16:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[10]}" = "report_attribute_references.adoc:17:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[11]}" = "report_attribute_references.adoc:18:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[12]}" = "report_attribute_references.adoc:19:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[13]}" = "report_attribute_references.adoc:20:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[14]}" = "report_attribute_references.adoc:21:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+}
+
 @test "Report links in assemblies" {
   run run_vale "$BATS_TEST_FILENAME" report_assemblies.adoc
   [ "$status" -eq 0 ]

@@ -1,0 +1,21 @@
+// Links and cross references with attribute references in them:
+:_mod-docs-content-type: CONCEPT
+
+= Topic title
+
+* link:{DOCUMENT_URL}[link text]
+* link:++{DOCUMENT_URL}++[link text]
+* link:https://example.com/docs/version-{ProductVersion}/title[link text]
+* link:{BaseURL}/docs/version-{ProductVersion}/title[link text]
+* https://example.com/docs/version-{ProductVersion}/title
+* <ftp://{SERVER_NAME}/downloads/>
+* link:{ProductURL}[]
+* https://{ProductURL}
+
+* xref:{AnchorFragment}[]
+* xref:{AnchorFragment}-suffix[]
+* xref:prefix-{AnchorFragment}[link text]
+* <<{AnchorFragment}>>
+* <<{AnchorFragment}-suffix>>
+* <<prefix-{AnchorFragment}>>
+* <<{AnchorFragment},link text>>
