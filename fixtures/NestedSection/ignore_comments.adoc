@@ -1,2 +1,7 @@
 // A level 2 section:
 //=== An unsupported section
+
+////
+A level 2 section in a block comment:
+=== An unsupported section
+////

@@ -1,7 +1,19 @@
 load test_helper
 
-@test "Ignore unsupported sections in single-line comments" {
+@test "Ignore unsupported sections inside of line and block comments" {
   run run_vale "$BATS_TEST_FILENAME" ignore_comments.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Ignore unsupported sections inside of code blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
+@test "Ignore files withe the IGNORE content type" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
   [ "$status" -eq 0 ]
   [ "${lines[0]}" = "" ]
 }
