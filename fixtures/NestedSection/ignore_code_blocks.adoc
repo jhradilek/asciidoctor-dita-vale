@@ -1,0 +1,13 @@
+// Ignore section headers in code blocks:
+
+[source,asciidoc]
+----
+=== An unsupported section
+
+A paragraph.
+----
+
+....
+=== MD5 Checksums ===
+92245490c552e83baf5f2a2e898d9fff  file.txt
+....
