@@ -25,3 +25,37 @@
 //* * *
 //
 //A page.
+
+////
+Thematic breaks in a block comment:
+
+A page.
+
+'''
+
+A page.
+
+---
+
+A page.
+
+- - -
+
+A page.
+
+___
+
+A page.
+
+_ _ _
+
+A page.
+
+***
+
+A page.
+
+* * *
+
+A page.
+////

@@ -1,4 +1,5 @@
-// Thematic break variations:
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
 
 A page.
 

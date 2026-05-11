@@ -1,0 +1,45 @@
+// Ignore thematic break variations in code blocks:
+
+A page.
+
+....
+'''
+....
+
+A page.
+
+----
+---
+----
+
+A page.
+
+----
+- - -
+----
+
+A page.
+
+----
+___
+----
+
+A page.
+
+----
+_ _ _
+----
+
+A page.
+
+----
+***
+----
+
+A page.
+
+----
+* * *
+----
+
+A page.
