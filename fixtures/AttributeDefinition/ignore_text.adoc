@@ -1,0 +1,5 @@
+// Strings similar to potentially problematic attribute definitions:
+
+:data-uri:A custom value.
+
+A :data-uri: attribute definition.

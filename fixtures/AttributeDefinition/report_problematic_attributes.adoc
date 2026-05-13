@@ -1,0 +1,6 @@
+// Potentially problematic attribute definitions:
+
+:data-uri:
+:data-uri: A custom value
+
+A paragraph.
