@@ -152,6 +152,7 @@ The following rules have their severity set to `suggestion`. These are convenien
 | Vale rule | Explanation |
 | --- | --- |
 | AttributeReference | Lists all [attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/reference-attributes/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
+| AttributeDefinition | List all [attribute definitions](https://docs.asciidoctor.org/asciidoc/latest/attributes/built-in-attributes/) in the file that potentially influence the DITA output.  Use this information to anticipate potential problems with the conversion. |
 | ConditionalCode | Lists all `ifdef`, `ifndef`, and `ifeval` [conditional statements](https://docs.asciidoctor.org/asciidoc/latest/directives/conditionals/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
 | IncludeDirective | Lists all [include directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include/) in the file. Use this information to decide if include directives should be processed during conversion. |
 | IntrinsicAttribute | List all [intrinsic attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) in the file. Use this information to anticipate potential problems with the conversion. |
