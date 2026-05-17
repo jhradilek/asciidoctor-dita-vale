@@ -1,0 +1,18 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+.An unsupported block title
+A paragraph.
+
+.An unsupported block title
+. A list.
+
+.An unsupported block title
+* A list.
+
+.An unsupported block title
+term::
+Definition
+
+term::
+Definition

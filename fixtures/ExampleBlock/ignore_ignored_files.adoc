@@ -1,0 +1,20 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+// An unsupported example in a sidebar block:
+****
+A paragraph.
+
+====
+An unsupported example.
+====
+****
+
+// An unsupported example in a delimited block:
+--
+A paragraph.
+
+====
+An unsupported example.
+====
+--

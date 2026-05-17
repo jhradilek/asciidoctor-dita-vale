@@ -1,0 +1,93 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+// Titles assigned to admonition blocks:
+.An admonition title
+[NOTE]
+====
+A note.
+====
+
+.An admonition title
+[TIP]
+====
+A note.
+====
+
+.An admonition title
+[IMPORTANT]
+====
+A note.
+====
+
+.An admonition title
+[WARNING]
+====
+A note.
+====
+
+.An admonition title
+[CAUTION]
+====
+A note.
+====
+
+// Titles assigned to paragraph admonitions:
+.An admonition title
+NOTE: A note.
+
+.An admonition title
+TIP: A note.
+
+.An admonition title
+IMPORTANT: A note.
+
+.An admonition title
+WARNING: A note.
+
+.An admonition title
+CAUTION: A note.
+
+// An admonition title below the block label:
+[NOTE]
+.An admonition title
+====
+A note.
+====
+
+// An admonition title above the block label separated by empty lines:
+.An admonition title
+
+[NOTE]
+
+====
+A note.
+====
+
+// An admonition title below the block label separated by empty lines:
+[NOTE]
+
+.An admonition title
+
+====
+A note.
+====
+
+// An admonition title after an oddly placed ID:
+[NOTE]
+[id="admonition-id"]
+.An admonition title
+====
+A note.
+====
+
+[NOTE]
+[#admonition-id]
+.An admonition title
+====
+A note.
+====
+
+.An admonition title
+[id="admonition-id"]
+NOTE: A note.

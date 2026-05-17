@@ -1,0 +1,51 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+// A table with a footer assigned using the options attribute:
+[options="footer"]
+|===
+|Table header
+
+|First row
+
+|Second row
+
+|Table footer
+|===
+
+// A table with a footer assigned using the options attribute:
+[options='header,footer']
+|===
+|Table header
+
+|First row
+
+|Second row
+
+|Table footer
+|===
+
+// A table with a footer assigned using the options attribute:
+[options=footer]
+|===
+|Table header
+
+|First row
+
+|Second row
+
+|Table footer
+|===
+
+
+// A table with a footer assigned using the shorthand syntax:
+[%header%footer,cols="1"]
+|===
+|Table header
+
+|First row
+
+|Second row
+
+|Table footer
+|===

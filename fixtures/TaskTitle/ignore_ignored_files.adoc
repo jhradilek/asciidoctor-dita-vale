@@ -1,0 +1,12 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+= Topic title
+
+A paragraph.
+
+.First unsupported title
+
+A paragraph.
+
+.Second unsupported title

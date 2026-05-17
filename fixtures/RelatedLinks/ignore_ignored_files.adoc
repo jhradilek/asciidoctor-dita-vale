@@ -1,0 +1,9 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+.Additional resources
+
+An invalid line.
+
+* An invalid line.
+* An invalid line with a valid link:https://example.com[link].

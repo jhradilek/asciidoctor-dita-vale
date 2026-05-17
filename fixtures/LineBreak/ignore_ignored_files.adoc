@@ -1,0 +1,36 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+// A hard line break:
+An example +
+hard line break.
+
+// A hard line break:
+/ +
+line break.
+
+// A hard line break attribute:
+:hardbreaks-option:
+
+An example
+hard line break.
+
+// A hard line break using the options attribute:
+[options="hardbreaks"]
+An example
+hard line break
+
+// A hard line break using the options attribute:
+[options='hardbreaks']
+An example
+hard line break
+
+// A hard line break using the options attribute:
+[options=hardbreaks]
+An example
+hard line break
+
+// A hard line break using the shorthand syntax:
+[%hardbreaks]
+An example
+hard line break.
