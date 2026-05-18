@@ -7,11 +7,10 @@ include::../snippets/snippet-file.adoc[]
 include::../../snippets/snippet-file.adoc[]
 include::{docdir}/snippets/snip_file.adoc[]
 
-include::attributes/snip-file.adoc[]
-include::artifacts/snip_file.adoc[]
+include::artifacts/snip-file.adoc[]
 include::common/snip_file.adoc[]
-include::../attributes/snip_file.adoc[]
-include::../../attributes/snip_file.adoc[]
-include::{docdir}/attributes/snip-file.adoc[]
+include::../artifacts/snip_file.adoc[]
+include::../../artifacts/snip_file.adoc[]
+include::{docdir}/artifacts/snip-file.adoc[]
 
 A paragraph.
