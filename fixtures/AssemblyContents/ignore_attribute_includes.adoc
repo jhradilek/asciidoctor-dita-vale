@@ -17,4 +17,8 @@ include::_attributes.adoc[]
 include::../attributes.adoc[]
 include::../../attributes.adoc[]
 
+include::{docdir}/_attributes/attributes.adoc[]
+include::{docdir}/common/attributes.adoc[]
+include::{docdir}/attributes.adoc[]
+
 A paragraph.
