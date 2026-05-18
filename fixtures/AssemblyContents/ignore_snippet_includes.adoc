@@ -3,6 +3,7 @@
 
 include::_snippets/snip_snippet-file.adoc[]
 include::snippets/common-snippets.adoc[]
+include::snippets/arbitrary-file-name.adoc[]
 include::../snippets/snippet-file.adoc[]
 include::../../snippets/snippet-file.adoc[]
 include::{docdir}/snippets/snip_file.adoc[]
