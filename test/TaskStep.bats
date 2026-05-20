@@ -60,6 +60,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files withe the IGNORE content type" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report content other than steps in procedures" {
   run run_vale "$BATS_TEST_FILENAME" report_non_steps.adoc
   [ "$status" -eq 0 ]

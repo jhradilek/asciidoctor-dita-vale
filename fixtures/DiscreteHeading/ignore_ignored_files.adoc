@@ -1,0 +1,13 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+[discrete]
+== A discreate heading
+
+A paragraph.
+
+// A discrete heading with additional parameters:
+[discrete,id="boo"]
+== A discreate heading
+
+A paragraph.

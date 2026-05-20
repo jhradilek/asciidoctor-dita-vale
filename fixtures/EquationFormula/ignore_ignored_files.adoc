@@ -1,0 +1,27 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+:stem:
+
+[stem] 
+++++ 
+sqrt(16) = 4
+++++
+
+[asciimath] 
+++++ 
+sqrt(9) = 3
+++++
+
+// Block STEM content with LaTeX math notation:
+:stem: latexmath
+
+[stem]
+++++
+\alpha = \beta + \gamma
+++++
+
+[latexmath]
+++++
+\alpha = \beta + \gamma
+++++

@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files withe the IGNORE content type" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report sections in procedures with deprecated _content-type" {
   run run_vale "$BATS_TEST_FILENAME" report_content_type.adoc
   [ "$status" -ne 0 ]

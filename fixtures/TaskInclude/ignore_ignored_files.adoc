@@ -1,0 +1,14 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+.Procedure
+
+include::first_step.adoc[]
+
+. A valid step.
+
+include::third_step.adoc[]
+
+. Another valid step.
+
+include::last_step.adoc[]

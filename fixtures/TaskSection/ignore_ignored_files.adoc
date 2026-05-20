@@ -1,0 +1,19 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+= Topic title
+
+A paragraph.
+
+// Sections are not supported in DITA tasks:
+== First unsupported section
+
+A paragraph.
+
+// Both sections should be reported:
+== Second unsupported section
+
+A paragraph.
+
+// Sections of all levels should be reported:
+=== Third unsupported section

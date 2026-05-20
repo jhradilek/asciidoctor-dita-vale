@@ -1,5 +1,11 @@
 load test_helper
 
+@test "Ignore files withe the IGNORE content type" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report block STEM content" {
   run run_vale "$BATS_TEST_FILENAME" report_block_stem.adoc
   [ "$status" -eq 0 ]

@@ -1,0 +1,12 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+.Procedure
+
+An invalid line.
+
+. A valid step.
+
+An invalid line.
+
+. A valid step.

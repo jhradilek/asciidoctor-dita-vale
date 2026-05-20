@@ -1,0 +1,16 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+// An explicit sidebar block:
+[sidebar]
+A paragraph.
+
+// A delimited sidebar block:
+****
+A paragraph.
+****
+
+// A delimited sidebar block:
+*******
+A paragraph.
+*******

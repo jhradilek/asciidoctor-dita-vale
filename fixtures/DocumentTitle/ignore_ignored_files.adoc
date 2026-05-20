@@ -1,0 +1,6 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+== A level 1 section heading
+
+A paragraph.

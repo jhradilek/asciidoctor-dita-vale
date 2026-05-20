@@ -1,0 +1,54 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+= Topic title
+
+A paragraph.
+
+.Prerequisites
+
+A paragraph.
+
+.Prerequisites
+
+A paragraph.
+
+.Procedure
+
+A paragraph.
+
+.Procedure
+
+A paragraph.
+
+.Verification
+
+A paragraph.
+
+.Verification
+
+A paragraph.
+
+.Troubleshooting
+
+A paragraph.
+
+.Troubleshooting
+
+A paragraph.
+
+.Next steps
+
+A paragraph.
+
+.Next steps
+
+A paragraph.
+
+.Additional resources
+
+A paragraph.
+
+.Additional resources
+
+A paragraph.

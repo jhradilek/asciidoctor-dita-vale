@@ -1,0 +1,28 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+= Topic title
+
+* link:/absolute/path/to/file.ext[]
+* link:/absolute/path/to/file.ext#anchor[link text]
+* link:https://example.com[]
+* link:https://example.com[link text]
+* https://example.com
+* https://example.com/page.html
+* https://example.com/page.html#anchor
+* https://example.com[link text]
+* https://example.com/page.html[link text]
+* https://example.com/page.html#anchor[link text]
+
+.Additional resources
+
+* An item.
+
+== Section title
+
+* xref:reference-link[link text]
+* xref:reference-link#anchor[link text]
+* xref:file-name.ext[link text]
+* xref:file-name.ext#anchor[link text]
+* <<anchor>>
+* <<anchor,link text>>

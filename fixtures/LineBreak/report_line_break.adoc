@@ -31,3 +31,7 @@ hard line break
 [%hardbreaks]
 An example
 hard line break.
+
+// A hard line break at the start of a line:
+{empty} +
+An example.

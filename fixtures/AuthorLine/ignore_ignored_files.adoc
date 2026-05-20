@@ -1,0 +1,9 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+= Topic title
+An author line.
+
+// Only the document heading can have author lines:
+= Another title
+A paragraph.
