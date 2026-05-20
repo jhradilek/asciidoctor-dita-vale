@@ -16,7 +16,7 @@ script: |
   r_code_block      := text.re_compile("^(?:\\.{4,}|-{4,})[ \\t]*$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
-  r_ignore_type     := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:ignore)")
+  r_ignore_type     := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:ignore)[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
