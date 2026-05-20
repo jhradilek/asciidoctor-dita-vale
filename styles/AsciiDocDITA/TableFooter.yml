@@ -57,6 +57,5 @@ script: |
       break
     } else if r_table_footer.match(line) {
       matches = append(matches, {begin: start, end: start + end - 1})
-      continue
     }
   }
