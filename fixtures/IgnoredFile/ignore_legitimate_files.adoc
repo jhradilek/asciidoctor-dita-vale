@@ -1,0 +1,4 @@
+// A file not marked to be ignored:
+:_mod-docs-content-type: CONCEPT
+
+A paragraph.
