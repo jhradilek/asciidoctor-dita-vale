@@ -1,0 +1,7 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+// A hard line break:
+An example +
+hard line break.
+
