@@ -16,5 +16,8 @@
 * https://_{ExampleURL}_:8443/path/_{ProjectName}_Path
 
 * `+https://example.com/+`
-* ++https://example.com/++
+* +https://example.com/+
+* "https://example.com"
 * value=https://example.com
+* value-https://example.com
+* value,https://example.com

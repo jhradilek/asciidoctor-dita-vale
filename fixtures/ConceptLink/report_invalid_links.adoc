@@ -19,7 +19,6 @@
 * #https://example.com/#
 * ~https://example.com/~
 * ^https://example.com/^
-* __https://example.com/__
 
 .Additional resources
 

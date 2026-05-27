@@ -33,7 +33,7 @@ load test_helper
 @test "Report all link variations outside of additional resources" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_links.adoc
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 23 ]
+  [ "${#lines[@]}" -eq 22 ]
   [ "${lines[0]}" = "report_invalid_links.adoc:6:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[1]}" = "report_invalid_links.adoc:7:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[2]}" = "report_invalid_links.adoc:8:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
@@ -50,13 +50,12 @@ load test_helper
   [ "${lines[13]}" = "report_invalid_links.adoc:19:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[14]}" = "report_invalid_links.adoc:20:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[15]}" = "report_invalid_links.adoc:21:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[16]}" = "report_invalid_links.adoc:22:5:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[16]}" = "report_invalid_links.adoc:29:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[17]}" = "report_invalid_links.adoc:30:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[18]}" = "report_invalid_links.adoc:31:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[19]}" = "report_invalid_links.adoc:32:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[20]}" = "report_invalid_links.adoc:33:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[21]}" = "report_invalid_links.adoc:34:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[22]}" = "report_invalid_links.adoc:35:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
 
 }
 
