@@ -13,6 +13,13 @@
 * https://example.com[link text]
 * https://example.com/page.html[link text]
 * https://example.com/page.html#anchor[link text]
+* _https://example.com/_
+* *https://example.com/*
+* `https://example.com/`
+* #https://example.com/#
+* ~https://example.com/~
+* ^https://example.com/^
+* __https://example.com/__
 
 .Additional resources
 
