@@ -21,3 +21,9 @@
 * value=https://example.com
 * value-https://example.com
 * value,https://example.com
+
+* https://
+* file://
+* `https://`
+* `file://`
+* **https://**
