@@ -27,3 +27,6 @@
 * `https://`
 * `file://`
 * **https://**
+* (https://)
+* [https://]
+* <https://>

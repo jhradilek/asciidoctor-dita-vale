@@ -19,6 +19,10 @@
 * #https://example.com/#
 * ~https://example.com/~
 * ^https://example.com/^
+* (https://example.com)
+* [https://example.com]
+* <https://example.com>
+
 
 .Additional resources
 
