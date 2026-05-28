@@ -33,7 +33,7 @@ load test_helper
 @test "Report all link variations outside of additional resources" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_links.adoc
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 16 ]
+  [ "${#lines[@]}" -eq 25 ]
   [ "${lines[0]}" = "report_invalid_links.adoc:6:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[1]}" = "report_invalid_links.adoc:7:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[2]}" = "report_invalid_links.adoc:8:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
@@ -44,12 +44,22 @@ load test_helper
   [ "${lines[7]}" = "report_invalid_links.adoc:13:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[8]}" = "report_invalid_links.adoc:14:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
   [ "${lines[9]}" = "report_invalid_links.adoc:15:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[10]}" = "report_invalid_links.adoc:23:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[11]}" = "report_invalid_links.adoc:24:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[12]}" = "report_invalid_links.adoc:25:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[13]}" = "report_invalid_links.adoc:26:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[14]}" = "report_invalid_links.adoc:27:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
-  [ "${lines[15]}" = "report_invalid_links.adoc:28:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[10]}" = "report_invalid_links.adoc:16:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[11]}" = "report_invalid_links.adoc:17:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[12]}" = "report_invalid_links.adoc:18:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[13]}" = "report_invalid_links.adoc:19:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[14]}" = "report_invalid_links.adoc:20:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[15]}" = "report_invalid_links.adoc:21:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[16]}" = "report_invalid_links.adoc:22:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[17]}" = "report_invalid_links.adoc:23:4:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[18]}" = "report_invalid_links.adoc:24:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[19]}" = "report_invalid_links.adoc:33:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[20]}" = "report_invalid_links.adoc:34:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[21]}" = "report_invalid_links.adoc:35:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[22]}" = "report_invalid_links.adoc:36:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[23]}" = "report_invalid_links.adoc:37:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+  [ "${lines[24]}" = "report_invalid_links.adoc:38:3:AsciiDocDITA.ConceptLink:Move all links and cross references to Additional resources." ]
+
 }
 
 @test "Report links with attribute references" {

@@ -14,3 +14,19 @@
 * https://^example.com^/page.html#anchor
 * https://__example.com__/page.html#anchor
 * https://_{ExampleURL}_:8443/path/_{ProjectName}_Path
+
+* `+https://example.com/+`
+* +https://example.com/+
+* "https://example.com"
+* value=https://example.com
+* value-https://example.com
+* value,https://example.com
+
+* https://
+* file://
+* `https://`
+* `file://`
+* **https://**
+* (https://)
+* [https://]
+* <https://>
