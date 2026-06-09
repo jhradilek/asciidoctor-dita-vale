@@ -34,23 +34,23 @@ load test_helper
   run run_vale "$BATS_TEST_FILENAME" report_example_in_block.adoc
   [ "$status" -eq 1 ]
   [ "${#lines[@]}" -eq 2 ]
-  [ "${lines[0]}" = "report_example_in_block.adoc:5:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
-  [ "${lines[1]}" = "report_example_in_block.adoc:14:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
+  [ "${lines[0]}" = "report_example_in_block.adoc:5:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
+  [ "${lines[1]}" = "report_example_in_block.adoc:14:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
 }
 
 @test "Report example blocks in list items" {
   run run_vale "$BATS_TEST_FILENAME" report_example_in_list.adoc
   [ "$status" -eq 1 ]
   [ "${#lines[@]}" -eq 3 ]
-  [ "${lines[0]}" = "report_example_in_list.adoc:5:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
-  [ "${lines[1]}" = "report_example_in_list.adoc:12:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
-  [ "${lines[2]}" = "report_example_in_list.adoc:19:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
+  [ "${lines[0]}" = "report_example_in_list.adoc:5:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
+  [ "${lines[1]}" = "report_example_in_list.adoc:12:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
+  [ "${lines[2]}" = "report_example_in_list.adoc:19:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
 }
 
 @test "Report example blocks in sections" {
   run run_vale "$BATS_TEST_FILENAME" report_example_in_section.adoc
   [ "$status" -eq 1 ]
   [ "${#lines[@]}" -eq 2 ]
-  [ "${lines[0]}" = "report_example_in_section.adoc:4:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
-  [ "${lines[1]}" = "report_example_in_section.adoc:7:1:AsciiDocDITA.ExampleBlock:Examples can not be inside of other blocks in DITA." ]
+  [ "${lines[0]}" = "report_example_in_section.adoc:4:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
+  [ "${lines[1]}" = "report_example_in_section.adoc:7:1:AsciiDocDITA.ExampleBlock:Example blocks can not be inside of other blocks in DITA." ]
 }

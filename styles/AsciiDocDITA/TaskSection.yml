@@ -4,7 +4,7 @@
 # move it to a separate file.
 ---
 extends: script
-message: "Sections are not allowed in DITA tasks."
+message: "Sections (==) are not allowed in DITA tasks."
 level: error
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#errors
 scope: raw

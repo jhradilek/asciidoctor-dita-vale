@@ -34,19 +34,19 @@ load test_helper
   run run_vale "$BATS_TEST_FILENAME" report_code_blocks.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_code_blocks.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (a level 0 heading) is missing." ]
+  [ "${lines[0]}" = "report_code_blocks.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (=) is missing." ]
 }
 
 @test "Report document titles that only appear in comments" {
   run run_vale "$BATS_TEST_FILENAME" report_comments.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_comments.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (a level 0 heading) is missing." ]
+  [ "${lines[0]}" = "report_comments.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (=) is missing." ]
 }
 
 @test "Report missing document titles" {
   run run_vale "$BATS_TEST_FILENAME" report_missing_title.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_missing_title.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (a level 0 heading) is missing." ]
+  [ "${lines[0]}" = "report_missing_title.adoc:1:1:AsciiDocDITA.DocumentTitle:The document title (=) is missing." ]
 }

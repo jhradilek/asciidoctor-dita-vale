@@ -46,33 +46,33 @@ load test_helper
   run run_vale "$BATS_TEST_FILENAME" report_code_blocks.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_code_blocks.adoc:8:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
+  [ "${lines[0]}" = "report_code_blocks.adoc:8:1:AsciiDocDITA.DocumentId:The document ID assigned to the level 0 (=) heading is missing." ]
 }
 
 @test "Report document ids that only appear in comments" {
   run run_vale "$BATS_TEST_FILENAME" report_comments.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_comments.adoc:8:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
+  [ "${lines[0]}" = "report_comments.adoc:8:1:AsciiDocDITA.DocumentId:The document ID assigned to the level 0 (=) heading is missing." ]
 }
 
 @test "Report ids followed by invalid blocks" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_blocks.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_invalid_blocks.adoc:6:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
+  [ "${lines[0]}" = "report_invalid_blocks.adoc:6:1:AsciiDocDITA.DocumentId:The document ID assigned to the level 0 (=) heading is missing." ]
 }
 
 @test "Report missing document ids" {
   run run_vale "$BATS_TEST_FILENAME" report_missing_id.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_missing_id.adoc:3:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
+  [ "${lines[0]}" = "report_missing_id.adoc:3:1:AsciiDocDITA.DocumentId:The document ID assigned to the level 0 (=) heading is missing." ]
 }
 
 @test "Report missing document ids for conditional titles" {
   run run_vale "$BATS_TEST_FILENAME" report_conditional_title.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
-  [ "${lines[0]}" = "report_conditional_title.adoc:3:1:AsciiDocDITA.DocumentId:The document id assigned to the level 0 heading is missing." ]
+  [ "${lines[0]}" = "report_conditional_title.adoc:3:1:AsciiDocDITA.DocumentId:The document ID assigned to the level 0 (=) heading is missing." ]
 }
