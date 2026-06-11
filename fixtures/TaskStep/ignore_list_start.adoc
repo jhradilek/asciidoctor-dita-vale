@@ -1,0 +1,8 @@
+// A list start in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+[start=2]
+. A valid step.
+. A valid step.

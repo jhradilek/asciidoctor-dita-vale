@@ -26,6 +26,7 @@ script: |
   r_example_delim   := text.re_compile("^={4,}[ \\t]*$")
   r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[.*\\][ \\t]*$")
   r_list_continue   := text.re_compile("^\\+[ \\t]*$")
+  r_list_restart    := text.re_compile("^\\[start=[0-9]+\\][ \\t]*$")
   r_other_block     := text.re_compile("^(?:\\.{4,}|-{4,}|={4,}|-{2}|\\|={3,})[ \\t]*$")
   r_procedure       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Procedure[ \\t]*$")
   r_step            := text.re_compile("^[ \\t]*[\\*-.]+[ \\t]+\\S.*$")
@@ -67,7 +68,9 @@ script: |
     if r_conditional.match(line) { continue }
     if r_include.match(line) { continue }
     if r_attribute.match(line) { continue }
-    if r_attribute_list.match(line) && ! r_admonition.match(line) {
+    if r_attribute_list.match(line) &&
+       ! r_admonition.match(line) &&
+       ! r_list_restart.match(line) {
       continue
     }
 
@@ -122,6 +125,7 @@ script: |
     }
 
     if in_step { continue }
+    if ! in_list && r_list_restart.match(line) { continue }
 
     if r_example_delim.match(line) { break }
 
