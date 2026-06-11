@@ -1,0 +1,9 @@
+// A list restart in a procedure:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
+
+[start=2]
+. A valid step.

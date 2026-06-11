@@ -60,6 +60,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore the start attribute before steps" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_list_start.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore files withe the IGNORE content type" {
   run run_vale "$BATS_TEST_FILENAME" ignore_ignored_files.adoc
   [ "$status" -eq 0 ]
@@ -100,4 +106,11 @@ load test_helper
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 1 ]
   [ "${lines[0]}" = "report_admonitions.adoc:9:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA steps." ]
+}
+
+@test "Report the start attribute in steps" {
+  run run_vale "$BATS_TEST_FILENAME" report_list_restart.adoc
+  [ "$status" -eq 0 ]
+  [ "${#lines[@]}" -eq 1 ]
+  [ "${lines[0]}" = "report_list_restart.adoc:8:1:AsciiDocDITA.TaskStep:Content other than a single list cannot be mapped to DITA steps." ]
 }
