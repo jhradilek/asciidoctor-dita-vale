@@ -5,7 +5,7 @@
 # needed, create a dedicated topic for it.
 ---
 extends: script
-message: "Level 2, 3, 4, and 5 sections are not supported in DITA."
+message: "Level 2, 3, 4, and 5 sections (=== and deeper) are not supported in DITA."
 level: error
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#errors
 scope: raw

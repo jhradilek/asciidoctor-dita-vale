@@ -5,7 +5,7 @@
 # at the top of the file to mark it as a snippet.
 ---
 extends: script
-message: "The document title (a level 0 heading) is missing."
+message: "The document title (=) is missing."
 level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw

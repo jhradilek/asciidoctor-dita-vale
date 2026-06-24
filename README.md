@@ -88,7 +88,7 @@ To set up a workflow to validate only files modified in a pull request:
     vale .
     ```
 
-    Note that on larger documentation projects, running `vale` like this may be slow or even fail with an error if your project uses symbolic links to other directories. To work around this problem, run `vale` in multiple parallel processes simultaneously, for example: 
+    Note that on larger documentation projects, running `vale` like this may be slow or even fail with an error if your project uses symbolic links to other directories. To work around this problem, run `vale` in multiple parallel processes simultaneously, for example:
 
     ```console
     find . -type f -name '*.adoc' | xargs -n 1 -P 14 vale --output line
@@ -113,7 +113,7 @@ The following rules have their severity set to `error`. The AsciiDoc markup repo
 | MismatchedId | The opening and closing quote in [a custom ID assignment](https://docs.asciidoctor.org/asciidoc/latest/attributes/id/#block-assignment) must match. Make sure you use the same single quote or double quote on both sides of the ID. |
 | NestedSection | DITA 1.3 allows the `<section>` element to appear only within the main body of the topic, not inside of another `<section>`. If [a level 2 section](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/) (`===`) is needed, create a dedicated topic for it. |
 | TaskExample | DITA 1.3 allows only one `<example>` element in a task topic. If multiple examples are needed, combine them in a single [example block](https://docs.asciidoctor.org/asciidoc/latest/blocks/example-blocks/). |
-| TaskSection | DITA 1.3 does not allow [sections](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/) in a task topic. If a section is needed, move it to a separate file. |
+| TaskSection | DITA 1.3 does not allow [sections (==)](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/) in a task topic. If a section is needed, move it to a separate file. |
 
 ### Warnings
 

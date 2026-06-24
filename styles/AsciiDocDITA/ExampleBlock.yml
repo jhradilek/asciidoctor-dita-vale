@@ -5,7 +5,7 @@
 # part of lists.
 ---
 extends: script
-message: "Examples can not be inside of other blocks in DITA."
+message: "Example blocks can not be inside of other blocks in DITA."
 level: error
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#errors
 scope: raw
