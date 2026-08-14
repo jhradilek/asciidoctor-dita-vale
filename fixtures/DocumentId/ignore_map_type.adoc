@@ -1,0 +1,10 @@
+// A file marked as an AsciiDoc map:
+:_mod-docs-content-type: MAP
+
+= A map title
+
+include::concept.adoc[leveloffset=+1]
+
+include::procedure.adoc[leveloffset=+2]
+
+include::reference.adoc[leveloffset=+2]

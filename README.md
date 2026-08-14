@@ -168,6 +168,7 @@ To report problems relevant for specific topic types, the Vale rules recognize t
 | IGNORE | Identifies the AsciiDoc file as irrelevant for potential conversion to DITA and disables all errors and warnings for it. |
 | ASSEMBLY | Identifies the AsciiDoc file as a modular documentation [assembly](https://redhat-documentation.github.io/modular-docs/#forming-assemblies). This implies that the assembly file follows the modular documentation guidelines and in addition to include directives, it contains a title and an introduction. |
 | ATTRIBUTES | Identifies the AsciiDoc file as an attribute definition file. This implies that the file is only used to provide attribute definitions and does not contain any printable content. |
+| MAP | Identifies the AsciiDoc file as an AsciiDoc map intended to convert directly to a DITA map. This implies that the file only contains include directives, an optional document title, an optional ID, and no other printable content. |
 | CONCEPT | Identifies the AsciiDoc file as a modular documentation [concept module](https://redhat-documentation.github.io/modular-docs/#creating-concept-modules). |
 | PROCEDURE | Identifies the AsciiDoc file as a modular documentation [procedure module](https://redhat-documentation.github.io/modular-docs/#con-creating-procedure-modules). |
 | REFERENCE | Identifies the AsciiDoc file as a modular documentation [reference module](https://redhat-documentation.github.io/modular-docs/#creating-reference-modules). |
