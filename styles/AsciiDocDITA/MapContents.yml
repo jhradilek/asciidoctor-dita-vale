@@ -1,8 +1,8 @@
 # Report unexpected contents in maps.
 #
-# Maps can only contain a document title, a document ID, and include
-# directives to define intended topic hierarchy. Additionally, they can
-# contain custom document attribute definitions for the purpose of
+# AsciiDoc maps can only contain a document title, a document ID, and
+# include directives to define intended topic hierarchy. Additionally, they
+# can contain custom document attribute definitions for the purpose of
 # previewing the AsciiDoc content. Do not place any other contents in
 # AsciiDoc maps.
 ---
