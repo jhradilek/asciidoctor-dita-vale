@@ -1,0 +1,24 @@
+// Invalid AsciiDoc map:
+
+:_mod-docs-content-type: MAP
+
+[id="map-id"]
+ifnef::downstream[]
+= A map title
+endif::downstream[]
+ifdef::downstream[]
+= A different map title
+endif::downstream[]
+
+[role="_abstract"]
+A short description.
+
+[id="section-id"]
+== A section title
+
+include::concept.adoc[leveloffset=+1]
+
+include::procedure.adoc[leveloffset=+2]
+
+include::reference.adoc[leveloffset=+2]
+
