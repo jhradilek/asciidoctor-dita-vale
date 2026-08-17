@@ -2,11 +2,11 @@
 #
 # DITA-OT and various component content management systems impose
 # additional restrictions on what characters can appear in DITA file names.
-# To prevent problems, only use alphanumeric characters and hyphens in your
-# file names.
+# To prevent problems, only use lowercase alphanumeric characters and
+# hyphens in your file names.
 ---
 extends: script
-message: "Use only alphanumeric characters and hyphens (a-z, 0-9, and -) in file names."
+message: "Use only lowercase alphanumeric characters and hyphens (a-z, 0-9, and -) in file names."
 level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw

@@ -22,6 +22,6 @@ load test_helper
   run run_vale "$BATS_TEST_FILENAME" report_invalid_filenames.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 2 ]
-  [ "${lines[0]}" = "report_invalid_filenames.adoc:7:1:AsciiDocDITA.MapFilename:Use only alphanumeric characters and hyphens (a-z, 0-9, and -) in file names." ]
-  [ "${lines[1]}" = "report_invalid_filenames.adoc:9:1:AsciiDocDITA.MapFilename:Use only alphanumeric characters and hyphens (a-z, 0-9, and -) in file names." ]
+  [ "${lines[0]}" = "report_invalid_filenames.adoc:7:1:AsciiDocDITA.MapFilename:Use only lowercase alphanumeric characters and hyphens (a-z, 0-9, and -) in file names." ]
+  [ "${lines[1]}" = "report_invalid_filenames.adoc:9:1:AsciiDocDITA.MapFilename:Use only lowercase alphanumeric characters and hyphens (a-z, 0-9, and -) in file names." ]
 }
