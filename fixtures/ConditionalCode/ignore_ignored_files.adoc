@@ -1,12 +1,5 @@
-// Valid conditional directive variations:
-
-ifndef::context[]
-[id="topic-id"]
-endif::[]
-ifdef::context[]
-[id="topic-id_{context}"]
-endif::[]
-= A topic title
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
 
 ifdef::beginner-content[]
 A paragraph.

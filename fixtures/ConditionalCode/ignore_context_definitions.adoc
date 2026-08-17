@@ -1,0 +1,7 @@
+// Conditional directives for setting and re-setting context:
+ifdef::context[:parent-context-of-the-topic: {context}]
+
+A paragraph.
+
+ifdef::parent-context-of-the-topic[:context: {parent-context-of-the-topic}]
+ifndef::parent-context-of-the-topic[:!context:]
