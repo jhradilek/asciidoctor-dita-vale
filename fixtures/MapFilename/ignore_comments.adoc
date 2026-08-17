@@ -1,0 +1,11 @@
+// An AsciiDoc map with inline and block comments:
+:_mod-docs-content-type: MAP
+
+[id="map-id"]
+= A map title
+
+//include::concept_module.adoc[leveloffset=+1]
+
+////
+include::../release-notes/version-3.5.adoc[leveloffset=+2]
+////

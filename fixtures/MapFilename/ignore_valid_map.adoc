@@ -1,0 +1,9 @@
+// A valid AsciiDoc map:
+:_mod-docs-content-type: MAP
+
+[id="map-id"]
+= A map title
+
+include::concept-module.adoc[leveloffset=+1]
+
+include::../release_notes/version-3-5.adoc[leveloffset=+2]
