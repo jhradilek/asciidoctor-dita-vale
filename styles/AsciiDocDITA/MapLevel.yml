@@ -78,6 +78,11 @@ script: |
       previous_offset = stack[len(stack) - 1]
     }
 
+    if current_offset > previous_offset {
+      stack = append(stack, current_offset)
+      continue
+    }
+
     if current_offset < previous_offset {
       matches = append(matches, {begin: start, end: start + end - 1})
     }
