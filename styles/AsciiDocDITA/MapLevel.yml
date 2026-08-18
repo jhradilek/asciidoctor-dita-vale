@@ -1,8 +1,9 @@
 # Report include directives with invalid leveloffset values in maps.
 #
-# AsciiDoc maps rely on the leveloffset attribute value to define the
+# AsciiDoc maps use the leveloffset attribute value to define the
 # intended topic hierarchy. Make sure that the leveloffset values increment
-# by one and do not have a lower value than the first included topic.
+# by one and do not use a value that is lower than in the first included
+# topic.
 ---
 extends: script
 message: "Invalid leveloffset value."
