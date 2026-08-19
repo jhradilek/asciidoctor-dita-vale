@@ -18,10 +18,11 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
-@test "Report includes with invalid leveloffset values" {
+@test "Report includes with missing toc=\"no\" attrributes" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_lines.adoc
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 2 ]
-  [ "${lines[0]}" = "report_invalid_lines.adoc:9:1:AsciiDocDITA.MapLevel:Invalid leveloffset value." ]
-  [ "${lines[1]}" = "report_invalid_lines.adoc:11:1:AsciiDocDITA.MapLevel:Invalid leveloffset value." ]
+  [ "${#lines[@]}" -eq 3 ]
+  [ "${lines[0]}" = "report_invalid_lines.adoc:9:1:AsciiDocDITA.MapToc:The toc=\"no\" attribute is missing." ]
+  [ "${lines[1]}" = "report_invalid_lines.adoc:11:1:AsciiDocDITA.MapToc:The toc=\"no\" attribute is missing." ]
+  [ "${lines[2]}" = "report_invalid_lines.adoc:17:1:AsciiDocDITA.MapToc:The toc=\"no\" attribute is missing." ]
 }
