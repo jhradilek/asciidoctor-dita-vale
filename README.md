@@ -24,6 +24,7 @@
     #AsciiDocDITA.ShortDescription = NO
     #AsciiDocDITA.ConceptLink = NO
     #AsciiDocDITA.MapFilename = NO
+    #AsciiDocDITA.MapToc = NO
     ```
 3.  Download and install the `AsciiDocDITA` package:
 
@@ -137,6 +138,7 @@ The following rules have their severity set to `warning`. The AsciiDoc markup re
 | MapContents | AsciiDoc maps can only contain a [document title](https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/), a [document ID](https://docs.asciidoctor.org/asciidoc/latest/attributes/id/), and [include directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include/) to define intended topic hierarchy. Additionally, they can contain [custom document attribute definitions](https://docs.asciidoctor.org/asciidoc/latest/attributes/custom-attributes/) for the purpose of previewing the AsciiDoc content. Do not place any other contents in AsciiDoc maps. |
 | MapFilename | [DITA-OT](https://www.dita-ot.org/) and various component content management systems impose additional restrictions on what characters can appear in DITA file names. To prevent problems, only use lowercase alphanumeric characters and hyphens in your file names. |
 | MapLevel | AsciiDoc maps use the [leveloffset attribute value](https://docs.asciidoctor.org/asciidoc/latest/directives/include-with-leveloffset/) to define the intended topic hierarchy. Make sure that the `leveloffset` values increment by one and do not use a value that is lower than in the first included topic. |
+| MapToc | AsciiDoc maps use the `chunk="to-content"` attribute to make the topic and any topics nested under it part of a single page. Add `toc="no"` to any topics that are nested under a topic with the `chunk="to-content"` attribute. |
 | PageBreak | DITA 1.3 does not support page breaks. If visual separation of the text is needed, rewrite your content without using a [page break](https://docs.asciidoctor.org/asciidoc/latest/blocks/breaks/#page-breaks). |
 | RelatedLinks | In DITA 1.3, the `<related-links>` element can only contain links. Format additional resources as [an unordered list](https://docs.asciidoctor.org/asciidoc/latest/lists/unordered/), remove lines that do not contain [a link](https://docs.asciidoctor.org/asciidoc/latest/macros/links/) or [a cross reference](https://docs.asciidoctor.org/asciidoc/latest/macros/xref/), and remove any text that precedes or follows a link or a cross reference. |
 | ShortDescription | DITA 1.3 supports the `<shortdesc>` element to provide a short description of the topic. Assign `[role="_abstract"]` to the paragraph you want to convert to the `<shortdesc>` element. |

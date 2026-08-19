@@ -1,8 +1,9 @@
 # Report include directives with missing toc="no" attributes in maps.
 #
 # AsciiDoc maps use the chunk="to-content" attribute to make the topic and
-# any topics nested under them part of a single page. Add toc="no" to any
-# topics that are part of a single page.
+# any topics nested under it part of a single page. Add toc="no" to any
+# topics that are nested under a topic with the chunk="to-content"
+# attribute.
 ---
 extends: script
 message: "The toc=\"no\" attribute is missing."
