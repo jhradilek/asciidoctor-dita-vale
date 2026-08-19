@@ -18,7 +18,7 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
-@test "Report file names with unsupported characters in AsciiDoc maps" {
+@test "Report file names with unsupported characters" {
   run run_vale "$BATS_TEST_FILENAME" report_invalid_filenames.adoc
   [ "$status" -eq 0 ]
   [ "${#lines[@]}" -eq 2 ]

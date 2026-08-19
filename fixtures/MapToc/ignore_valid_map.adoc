@@ -1,0 +1,23 @@
+// A valid AsciiDoc map:
+:_mod-docs-content-type: MAP
+
+[id="map-id"]
+= A map title
+
+include::file-0.adoc[]
+
+include::file-1.adoc[leveloffset=+1,chunk="to-content"]
+
+include::file-2.adoc[leveloffset=+2,toc="no"]
+
+include::file-3.adoc[leveloffset=+2,toc="no"]
+
+include::file-4.adoc[leveloffset=+1]
+
+include::file-5.adoc[leveloffset=+2,chunk="to-content"]
+
+include::file-6.adoc[leveloffset=+3,toc="no"]
+
+include::file-7.adoc[leveloffset=+4]
+
+include::file-6.adoc[leveloffset=+3,toc="no"]

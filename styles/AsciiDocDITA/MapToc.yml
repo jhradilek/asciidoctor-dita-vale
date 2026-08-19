@@ -1,12 +1,12 @@
-# Report include directives with invalid leveloffset values in maps.
+# Report include directives with missing toc="no" attributes in maps.
 #
-# AsciiDoc maps use the leveloffset attribute value to define the
-# intended topic hierarchy. Make sure that the leveloffset values increment
-# by one and do not use a value that is lower than in the first included
-# topic.
+# AsciiDoc maps use the chunk="to-content" attribute to make the topic and
+# any topics nested under it part of a single page. Add toc="no" to any
+# topics that are nested under a topic with the chunk="to-content"
+# attribute.
 ---
 extends: script
-message: "Invalid leveloffset value."
+message: "The toc=\"no\" attribute is missing."
 level: warning
 link: https://github.com/jhradilek/asciidoctor-dita-vale/blob/main/README.md#warnings
 scope: raw
@@ -19,12 +19,15 @@ script: |
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:map)[ \\t]*$")
   r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[(.*)\\][ \\t]*$")
   r_leveloffset     := text.re_compile("^(?:.*, *|)leveloffset=([+-]?[0-9]+)(?:,.*|)$")
+  r_chunk_attribute := text.re_compile("^(?:.*, *|)chunk=\"to-content\"(?:,.*|)$")
+  r_toc_attribute   := text.re_compile("^(?:.*, *|)toc=\"no\"(?:,.*|)$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
   in_comment_block  := false
   is_asciidoc_map   := false
   is_first_include  := true
+  chunk_offset      := undefined
   stack             := []
 
   start             := 0
@@ -58,6 +61,17 @@ script: |
     current_offset  := int(level_offset) || 0
     previous_offset := stack[len(stack) - 1]
 
+    if is_int(chunk_offset) {
+      if ! r_toc_attribute.match(attribute_list) &&
+         current_offset - chunk_offset == 1 {
+        matches = append(matches, {begin: start, end: start + end - 1})
+      } else if current_offset <= chunk_offset {
+        chunk_offset = undefined
+      }
+    } else if r_chunk_attribute.match(attribute_list) {
+      chunk_offset = current_offset
+    }
+
     if is_first_include {
       stack = append(stack, current_offset)
       is_first_include = false
@@ -65,10 +79,6 @@ script: |
     }
 
     if current_offset > previous_offset {
-      if current_offset - previous_offset > 1 {
-        matches = append(matches, {begin: start, end: start + end - 1})
-      }
-
       stack = append(stack, current_offset)
       continue
     }
@@ -81,10 +91,6 @@ script: |
     if current_offset > previous_offset {
       stack = append(stack, current_offset)
       continue
-    }
-
-    if current_offset < previous_offset {
-      matches = append(matches, {begin: start, end: start + end - 1})
     }
   }
 
