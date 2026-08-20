@@ -1,4 +1,7 @@
 # Report maps with more than 200 include directives.
+#
+# To ensure optimum performance in component content management systems
+# (CCMS), do not use more than 200 include directives in AsciiDoc maps.
 ---
 extends: script
 message: "The number of include directives exceeds 200."
