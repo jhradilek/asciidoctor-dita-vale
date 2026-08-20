@@ -14,6 +14,12 @@ script: |
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t]+(?i:map)[ \\t]*$")
   r_include         := text.re_compile("^include::(?:[^ \\t\\[]|[^[]*[^ \\t\\[])\\[.*\\][ \\t]*$")
 
+  // Teams are inconsistent in how they name attribute definition files and
+  // snippet files. As it is impossible to reliably identify these files without
+  // reading their contents, the following is a workaround specifically for
+  // openshift-docs:
+  r_attribute_file  := text.re_compile("^include::(?:\\{docdir\\}/)?(?:\\.\\./)*_?(?:attributes|(?:attributes|common|artifacts)/(?:attributes-[^/]+|[^/]*-?attributes[^/]*))\\.adoc\\[.*\\][ \\t]*$")
+
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
   in_comment_block  := false
@@ -44,7 +50,7 @@ script: |
       continue
     }
 
-    if r_include.match(line) {
+    if r_include.match(line) && ! r_attribute_file.match(line) {
       include_count++
 
       if include_count > 200 {

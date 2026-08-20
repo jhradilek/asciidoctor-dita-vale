@@ -12,6 +12,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore supported attribute includes" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_attribute_includes.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore valid AsciiDoc maps" {
   run run_vale "$BATS_TEST_FILENAME" ignore_valid_map.adoc
   [ "$status" -eq 0 ]
