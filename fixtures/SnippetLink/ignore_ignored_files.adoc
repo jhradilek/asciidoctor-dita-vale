@@ -1,0 +1,6 @@
+// A file marked to be ignored:
+:_mod-docs-content-type: IGNORE
+
+= Topic title
+
+* link:/absolute/path/to/file.ext[]

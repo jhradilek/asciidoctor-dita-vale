@@ -1,6 +1,6 @@
 # Report potentially problematic attribute definitions.
 #
-# List all attribute definitions that may unexpectedly influence the DITA
+# Lists all attribute definitions that may unexpectedly influence the DITA
 # output. Use this information to anticipate potential problems with the
 # conversion.
 ---

@@ -1,0 +1,6 @@
+// Links and cross references in a concept topic:
+:_mod-docs-content-type: CONCEPT
+
+= Topic title
+
+* link:/absolute/path/to/file.ext[]

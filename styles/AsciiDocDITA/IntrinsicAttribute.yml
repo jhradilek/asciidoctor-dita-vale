@@ -1,7 +1,7 @@
 # Report intrinsic attribute references.
 #
-# List all intrinsic attribute references in the file. Use this information
-# to anticipate potential problems with the conversion.
+# Lists all intrinsic attribute references in the file. Use this
+# information to anticipate potential problems with the conversion.
 ---
 extends: existence
 message: "%s"

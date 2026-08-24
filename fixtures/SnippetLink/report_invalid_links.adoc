@@ -1,0 +1,28 @@
+// Links and cross references in a snippet file:
+:_mod-docs-content-type: SNIPPET
+
+* link:/absolute/path/to/file.ext[]
+* link:/absolute/path/to/file.ext#anchor[link text]
+* link:https://example.com[]
+* link:https://example.com[link text]
+* https://example.com
+* https://example.com/page.html
+* https://example.com/page.html#anchor
+* https://example.com[link text]
+* https://example.com/page.html[link text]
+* https://example.com/page.html#anchor[link text]
+* _https://example.com/_
+* *https://example.com/*
+* `https://example.com/`
+* #https://example.com/#
+* ~https://example.com/~
+* ^https://example.com/^
+* (https://example.com)
+* [https://example.com]
+* <https://example.com>
+* xref:reference-link[link text]
+* xref:reference-link#anchor[link text]
+* xref:file-name.ext[link text]
+* xref:file-name.ext#anchor[link text]
+* <<anchor>>
+* <<anchor,link text>>
