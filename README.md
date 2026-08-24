@@ -160,12 +160,13 @@ The following rules have their severity set to `suggestion`. These are convenien
 | Vale rule | Explanation |
 | --- | --- |
 | AttributeReference | Lists all [attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/reference-attributes/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
-| AttributeDefinition | List all [attribute definitions](https://docs.asciidoctor.org/asciidoc/latest/attributes/built-in-attributes/) in the file that potentially influence the DITA output.  Use this information to anticipate potential problems with the conversion. |
+| AttributeDefinition | Lists all [attribute definitions](https://docs.asciidoctor.org/asciidoc/latest/attributes/built-in-attributes/) in the file that potentially influence the DITA output.  Use this information to anticipate potential problems with the conversion. |
 | ConditionalCode | Lists all `ifdef`, `ifndef`, and `ifeval` [conditional statements](https://docs.asciidoctor.org/asciidoc/latest/directives/conditionals/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
 | IgnoredFile | Lists all content type definitions with the value "IGNORE". Use this information to list files that are not intended for conversion. |
 | IncludeDirective | Lists all [include directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include/) in the file. Use this information to decide if include directives should be processed during conversion. |
-| IntrinsicAttribute | List all [intrinsic attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) in the file. Use this information to anticipate potential problems with the conversion. |
+| IntrinsicAttribute | Lists all [intrinsic attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/#intrinsic-attributes) in the file. Use this information to anticipate potential problems with the conversion. |
 | TagDirective | Lists all [tag directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include-tagged-regions/) in the file. Use this information to decide how to approach conditional content after conversion. |
+| SnippetLink | Lists all links and cross references in snippet files. Use this information to identify snippets that might bring links and cross references to the main body of a concept topic during conversion. |
 
 ## Recognized content types
 
