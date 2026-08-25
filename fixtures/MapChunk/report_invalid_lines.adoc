@@ -1,0 +1,17 @@
+// An AsciiDoc map with nested chunk="to-content" attributes:
+:_mod-docs-content-type: MAP
+
+[id="map-id"]
+= A map title
+
+include::file-1.adoc[leveloffset=+1,chunk="to-content"]
+
+include::file-2.adoc[leveloffset=+2]
+
+include::file-3.adoc[leveloffset=+2,chunk="to-content"]
+
+include::file-4.adoc[leveloffset=+1]
+
+include::file-5.adoc[leveloffset=+2,chunk="to-content"]
+
+include::file-6.adoc[leveloffset=+3,chunk="to-content"]
