@@ -1,0 +1,45 @@
+// A valid AsciiDoc assembly:
+:_mod-docs-content-type: ASSEMBLY
+
+[id="assembly-title"]
+= Assembly topic
+
+[role="_abstract"]
+A short description.
+
+include::_snippets/snip_snippet-file.adoc[]
+include::snippets/common-snippets.adoc[]
+include::snippets/arbitrary-file-name.adoc[]
+include::../snippets/snippet-file.adoc[]
+include::../../snippets/snippet-file.adoc[]
+include::{docdir}/snippets/snip_file.adoc[]
+include::artifacts/snip-file.adoc[]
+include::common/snip_file.adoc[]
+include::../artifacts/snip_file.adoc[]
+include::../../artifacts/snip_file.adoc[]
+include::{docdir}/artifacts/snip-file.adoc[]
+
+A paragraph.
+
+include::concept.adoc[leveloffset=+1]
+
+include::_attributes/attributes.adoc[]
+include::_attributes/common-attributes.adoc[]
+include::_attributes/attributes-common.adoc[]
+include::_attributes/document-attributes-global.adoc[]
+include::attributes/attributes.adoc[]
+include::artifacts/attributes.adoc[]
+include::common/attributes.adoc[]
+include::../attributes/attributes.adoc[]
+include::../../attributes/attributes.adoc[]
+include::attributes.adoc[]
+include::_attributes.adoc[]
+include::../attributes.adoc[]
+include::../../attributes.adoc[]
+include::{docdir}/_attributes/attributes.adoc[]
+include::{docdir}/common/attributes.adoc[]
+include::{docdir}/attributes.adoc[]
+
+include::procedure.adoc[leveloffset=+2]
+
+include::reference.adoc[leveloffset=+2]
