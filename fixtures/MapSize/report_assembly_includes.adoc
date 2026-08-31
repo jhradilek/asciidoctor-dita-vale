@@ -1,6 +1,12 @@
 // An valid assembly file
 :_mod-docs-content-type: ASSEMBLY
 
+[id="assembly-id"]
+= Assembly title
+
+[role="_abstract"]
+A short description.
+
 include::file-1.adoc[leveloffset=+1]
 include::file-2.adoc[leveloffset=+1]
 include::file-3.adoc[leveloffset=+1]
@@ -201,4 +207,3 @@ include::file-197.adoc[leveloffset=+1]
 include::file-198.adoc[leveloffset=+1]
 include::file-199.adoc[leveloffset=+1]
 include::file-200.adoc[leveloffset=+1]
-include::file-201.adoc[leveloffset=+1]
