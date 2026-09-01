@@ -1,4 +1,4 @@
-// A valid assembly file:
+// An assembly with the :chunk-to-content: attribute:
 :_mod-docs-content-type: ASSEMBLY
 
 :chunk-to-content:

@@ -1,4 +1,4 @@
-// A valid AsciiDoc map:
+// A valid AsciiDoc map with an invalid :chunk-to-content: attribute:
 :_mod-docs-content-type: MAP
 
 :chunk-to-content:

@@ -1,8 +1,8 @@
 # Report include directives with nested chunk="to-content" attributes.
 #
-# AsciiDoc maps use the chunk="to-content" attribute to make the topic and
-# any topics nested under it part of a single page. Do not add
-# chunk="to-content" to any topics that are nested under a topic that
+# AsciiDoc assemblies and maps use the chunk="to-content" attribute to make
+# the topic and any topics nested under it part of a single page. Do not
+# add chunk="to-content" to any topics that are nested under a topic that
 # already has this attribute assigned.
 ---
 extends: script

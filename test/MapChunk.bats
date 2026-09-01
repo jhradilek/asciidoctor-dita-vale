@@ -43,4 +43,3 @@ load test_helper
   [ "${lines[2]}" = "report_chunk_attribute.adoc:20:1:AsciiDocDITA.MapChunk:The chunk=\"to-content\" attribute cannot be nested." ]
   [ "${lines[3]}" = "report_chunk_attribute.adoc:22:1:AsciiDocDITA.MapChunk:The chunk=\"to-content\" attribute cannot be nested." ]
 }
-
