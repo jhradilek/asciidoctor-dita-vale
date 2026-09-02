@@ -1,4 +1,4 @@
-// A valid assembly file:
+// An assembly file with missing toc="no" attributes:
 :_mod-docs-content-type: ASSEMBLY
 
 [id="assembly-title"]

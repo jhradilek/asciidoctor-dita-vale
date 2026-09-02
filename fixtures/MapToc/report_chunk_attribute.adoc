@@ -1,0 +1,22 @@
+// An assembly file with the :chunk-to-content: attribute:
+:_mod-docs-content-type: ASSEMBLY
+
+:chunk-to-content:
+
+[id="assembly-title"]
+= Assembly topic
+
+[role="_abstract"]
+A short description.
+
+include::file-1.adoc[leveloffset=+1]
+
+include::file-2.adoc[leveloffset=+2]
+
+include::file-3.adoc[leveloffset=+2]
+
+include::file-4.adoc[leveloffset=+1]
+
+include::file-5.adoc[leveloffset=+2]
+
+include::file-6.adoc[leveloffset=+3]
