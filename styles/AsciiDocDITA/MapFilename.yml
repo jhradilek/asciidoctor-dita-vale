@@ -1,4 +1,4 @@
-# Report file names with unsupported characters in maps.
+# Report file names with unsupported characters in assemblies and maps.
 #
 # DITA-OT and various component content management systems impose
 # additional restrictions on what characters can appear in DITA file names.
