@@ -1,4 +1,4 @@
-// A valid assembly file:
+// An assembly with invalid file names:
 :_mod-docs-content-type: ASSEMBLY
 
 [id="assembly-title"]
@@ -9,11 +9,11 @@ A short description.
 
 Assembly introduction.
 
-include::first_file.adoc[leveloffset=+1]
+include::concept_module.adoc[leveloffset=+1]
 
-include::second_file.adoc[leveloffset=+1]
+include::../release-notes/version-3.5.adoc[leveloffset=+2]
 
-include::third_file.adoc[leveloffset=+1]
+include::common/TP.adoc[leveloffset=+1]
 
 [role='_additional-resources']
 .Additional resources
