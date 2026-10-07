@@ -1,0 +1,27 @@
+// A procedure module with empty lines between the title and valid block:
+:_mod-docs-content-type: PROCEDURE
+
+= Topic title
+
+A paragraph.
+
+.Image title
+
+image::file.png[]
+
+.Table title
+
+
+
+[cols="1"]
+|===
+|Header
+
+|Cell
+|===
+
+.Example title
+
+====
+An example.
+====
