@@ -36,6 +36,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore supported block titles with empty lines before the block" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_empty_lines.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore supported block titles with trailing spaces" {
   run run_vale "$BATS_TEST_FILENAME" ignore_trailing_spaces.adoc
   [ "$status" -eq 0 ]
