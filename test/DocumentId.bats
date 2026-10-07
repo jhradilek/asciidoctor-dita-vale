@@ -30,6 +30,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files with valid document ids and section styles" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_section_styles.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore files with valid contents in between" {
   run run_vale "$BATS_TEST_FILENAME" ignore_valid_blocks.adoc
   [ "$status" -eq 0 ]

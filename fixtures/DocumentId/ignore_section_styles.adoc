@@ -1,0 +1,6 @@
+// A module with the appendix section style:
+
+[appendix,id="document-id"]
+= A document title
+
+A paragraph.
