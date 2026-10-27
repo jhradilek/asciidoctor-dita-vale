@@ -21,7 +21,7 @@ load test_helper
 @test "Report admonition title variations" {
   run run_vale "$BATS_TEST_FILENAME" report_admonition_title.adoc
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 16 ]
+  [ "${#lines[@]}" -eq 18 ]
   [ "${lines[0]}" = "report_admonition_title.adoc:2:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
   [ "${lines[1]}" = "report_admonition_title.adoc:8:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
   [ "${lines[2]}" = "report_admonition_title.adoc:14:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
@@ -38,4 +38,6 @@ load test_helper
   [ "${lines[13]}" = "report_admonition_title.adoc:76:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
   [ "${lines[14]}" = "report_admonition_title.adoc:83:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
   [ "${lines[15]}" = "report_admonition_title.adoc:88:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
+  [ "${lines[16]}" = "report_admonition_title.adoc:92:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
+  [ "${lines[17]}" = "report_admonition_title.adoc:98:1:AsciiDocDITA.AdmonitionTitle:Admonition titles are not supported in DITA." ]
 }

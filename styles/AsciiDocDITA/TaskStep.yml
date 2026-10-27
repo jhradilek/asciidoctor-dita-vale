@@ -13,7 +13,7 @@ script: |
   text              := import("text")
   matches           := []
 
-  r_admonition      := text.re_compile("^\\[(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION)\\][ \\t]*$")
+  r_admonition      := text.re_compile("^\\[(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION)\\b[^\\]]*?\\][ \\t]*$")
   r_any_title       := text.re_compile("^\\.{1,2}[^ \\t.].*$")
   r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
