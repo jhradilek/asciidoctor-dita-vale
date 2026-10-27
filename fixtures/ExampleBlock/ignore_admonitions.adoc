@@ -65,3 +65,13 @@ An admonition.
 ====
 An admonition.
 ====
+
+[NOTE,role="disclaimer"]
+====
+An admonition.
+====
+
+[NOTE,id="admonition-id"]
+====
+An admonition.
+====

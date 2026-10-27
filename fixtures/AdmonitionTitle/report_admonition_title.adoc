@@ -88,3 +88,15 @@ A note.
 .An admonition title
 [id="admonition-id"]
 NOTE: A note.
+
+.An admonition title
+[NOTE,role="disclaimer"]
+====
+A note.
+====
+
+.An admonition title
+[NOTE,id="admonition-id"]
+====
+A note.
+====

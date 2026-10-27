@@ -1,0 +1,25 @@
+// Valid admonitions in procedure steps:
+:_mod-docs-content-type: PROCEDURE
+
+.Procedure
+
+. A valid step.
++
+[NOTE]
+====
+A valid admonition.
+====
+
+. A valid step.
++
+[NOTE,role="disclaimer"]
+====
+A valid admonition.
+====
+
+. A valid step.
++
+[NOTE,id="admonition-id"]
+====
+A valid admonition.
+====
